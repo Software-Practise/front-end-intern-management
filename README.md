@@ -1,4 +1,4 @@
-# intern-mangement
+# intern-management
 Intern management web application for Northwest Missouri State University 
 
 
