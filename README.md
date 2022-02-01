@@ -1,4 +1,11 @@
 # intern-mangement
 Intern management web application for Northwest Missouri State University 
 
-Create back-end and front-end
+
+TO DO:
+-decide on front-end framwork
+-prototype database
+-design mock-up and identify functional components
+
+
+
