@@ -1,4 +1,4 @@
-https://img.shields.io/badge/style-tailwindcss-blue
+https://img.shields.io/github/issues/cameronkc/intern-management
   
 https://img.shields.io/badge/<Backend>-<Spring Boot Java>-<blue>
   
