@@ -1,7 +1,4 @@
-[https://img.shields.io/github/issues/cameronkc/intern-management]
-  
-https://img.shields.io/badge/<Backend>-<Spring Boot Java>-<blue>
-  
+
 [View Live Development](https://gallant-hermann-bb5bce.netlify.app/)
 
 *Want to view the project locally instead*?
