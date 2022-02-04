@@ -3,7 +3,7 @@
 
 *Want to view the project locally instead*?
 
-[Getting Started with Create React App](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md)
+Clone the Repo and [Get Started with Create React App](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md)
 
 # Intern Management Application
 
