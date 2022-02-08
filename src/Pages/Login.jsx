@@ -7,7 +7,7 @@ function Login() {
     navigate("/");
   };
   return (
-    <div className="flex items-center justify-center mt-20">
+    <div className="flex bg-nwgreen items-center justify-center mt-20 p-5">
       <div className="w-full max-w-md">
         <form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
           <div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
@@ -35,7 +35,7 @@ function Login() {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="px-4 py-2 rounded text-white inline-block shadow-lg bg-nwgreen hover:bg-blue-600 focus:bg-blue-700"
+              className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen "
               onClick={handleSubmit}
             >
               Sign In
