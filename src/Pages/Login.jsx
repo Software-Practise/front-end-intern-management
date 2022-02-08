@@ -33,7 +33,7 @@ function Login() {
               placeholder="Password"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex justify-center items-center ">
             <button
               className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen "
               onClick={handleSubmit}
