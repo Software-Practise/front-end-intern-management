@@ -10,12 +10,12 @@ function Login() {
     <div className="flex items-center justify-center mt-20">
       <div className="w-full max-w-md">
         <form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
-          <div className="text-gray-800 text-2xl flex justify-center border-b-2 py-2 mb-4">
+          <div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
             Northwest Login
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-normal mb-2">
-              Student Email
+              Northwest Email
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -35,17 +35,11 @@ function Login() {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700"
+              className="px-4 py-2 rounded text-white inline-block shadow-lg bg-nwgreen hover:bg-blue-600 focus:bg-blue-700"
               onClick={handleSubmit}
             >
               Sign In
             </button>
-            <a
-              className="inline-block align-baseline font-normal text-sm text-blue-500 hover:text-blue-800"
-              href="#"
-            >
-              Admin? Login here
-            </a>
           </div>
         </form>
       </div>

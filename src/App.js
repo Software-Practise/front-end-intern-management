@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         {/* Todo: Private Routing For Admin Dashboard */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/student" element={<StudentDashboard />} />
