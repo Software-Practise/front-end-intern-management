@@ -5,6 +5,8 @@
 
 Clone the Repo and [Get Started with Create React App](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md)
 
+---
+
 [Backend Repo](https://github.com/Programmer026/InternManagementBackend)
 
 
