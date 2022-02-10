@@ -12,5 +12,5 @@ Clone the Repo and [Get Started with Create React App](https://github.com/facebo
 
 # Intern Management Application
 
-The main aim of this project is to develop and design a functional prototype of an Internship Management Dashboard for Career Services at Northwest Missouri State University. The core functionality will be ti maintain the records of the students who have applied for internship. As well as help students regarding the enrollment process by providing instruction manuals, and an application form which can be easily accessible by the students-on-students tab. Once done with the application the administration will be notified and the student can check for the status of approval.
+The main aim of this project is to develop and design a functional prototype of an Internship Management Dashboard for Career Services at Northwest Missouri State University. The core functionality will be to maintain the records of the students who have applied for internships. As well as help students regarding the enrollment process - providing instruction manuals, and an application form which can be easily accessible by the students-on-students tab. Once done with the application, the administration will be notified and the student can check for the status of approval.
 
