@@ -7,7 +7,7 @@ function Login() {
     navigate("/");
   };
   return (
-    <div className="flex bg-nwgreen items-center justify-center mt-20 p-5">
+    <div className="flex bg-nwgreen items-center justify-center p-12 mt-10">
       <div className="w-full max-w-md">
         <form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-4">
           <div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
