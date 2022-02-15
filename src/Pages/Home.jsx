@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
   return (
-    <div className="text-center">
+    <div className="text-center pt-50">
       <h1>
         <a href="/admin">Admin View</a>
       </h1>
