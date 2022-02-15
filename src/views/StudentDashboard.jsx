@@ -2,6 +2,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import logo from "../assets/nwlogo.png";
 
 const user = {
   name: "Tom Cook",
@@ -10,11 +11,11 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
+  { name: "Apply", href: "#", current: true },
+  { name: "Applications", href: "#", current: false },
+  { name: "Review", href: "#", current: false },
+  { name: "Offers", href: "#", current: false },
+  { name: "Get Help", href: "#", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -26,7 +27,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function StudentDashboard() {
+export default function Example() {
   return (
     <>
       {/*
@@ -38,18 +39,14 @@ export default function StudentDashboard() {
         ```
       */}
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-nwgreen">
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                        alt="Workflow"
-                      />
+                      <img className="h-12 w-12" src={logo} alt="Workflow" />
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -60,7 +57,7 @@ export default function StudentDashboard() {
                             className={classNames(
                               item.current
                                 ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                : "text-gray-300 hover:bg-gray-700 hover:text-gray",
                               "px-3 py-2 rounded-md text-sm font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -202,18 +199,16 @@ export default function StudentDashboard() {
           )}
         </Disclosure>
 
-        <header className="bg-white shadow">
+        <header className="bg-gray-800 shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-gray-900">
-              Student Dashboard
-            </h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Dashboard</h1>
           </div>
         </header>
         <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             {/* Replace with your content */}
             <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
+              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96" />
             </div>
             {/* /End replace */}
           </div>
