@@ -1,6 +1,6 @@
 ---
 
-[View Live Development](https://gallant-hermann-bb5bce.netlify.app/)
+[View Live Development](https://620ead8797c19f45b913cf78--gallant-hermann-bb5bce.netlify.app/)
 
 *Want to view the project locally instead*?
 
