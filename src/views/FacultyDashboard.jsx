@@ -207,10 +207,16 @@ export default function Example() {
         <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             {/* Replace with your content */}
-            <button> buttonName button</button>
-
+            {/* contains everything below the "faculty dashboard" header. Below that line underneath faculty dashboard */}
+          
             <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96" </div>
+              {/* your code here */}
+
+              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">
+                {/* this is where code goes that you want encased in the dashed border in center of screen */}
+                {/* button code here (if you want buttons inside the dashed box) */}
+                
+              </div>
             </div>
             {/* /End replace */}
           </div>
