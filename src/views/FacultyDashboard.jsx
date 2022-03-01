@@ -204,6 +204,9 @@ export default function FacultyDashboard() {
 
 				<header className="bg-white shadow">
 					<div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+
+            {/* contains everything below the "faculty dashboard" header. Below that line underneath faculty dashboard */}
+
 						<h1 className="text-3xl font-bold text-gray-900">
 							Faculty Dashboard
 						</h1>
@@ -212,7 +215,12 @@ export default function FacultyDashboard() {
 				<main>
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						<div className="px-4 py-6 sm:px-0">
-							<div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+							<div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
+
+                {/* this is where code goes that you want encased in the dashed border in center of screen */}
+                {/* button code here (if you want buttons inside the dashed box) */}
+                
+              </div>
 						</div>
 						{/* /End replace */}
 					</div>
