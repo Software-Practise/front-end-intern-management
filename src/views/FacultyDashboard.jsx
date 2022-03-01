@@ -39,16 +39,16 @@ export default function Example() {
         ```
       */}
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-nwgreen">
+        <Disclosure as="nav" className="bg-nwgreen">        {/* Nav bar */}
           {({ open }) => (
             <>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                  <div className="flex items-center">
-                    <div className="flex-shrink-0">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">        {/* Padding left and right */}
+                <div className="flex items-center justify-between h-16">        {/* Padding inbetween Bell/Picture and Navigation buttons */}
+                  <div className="flex items-center">       {/* Northwest Logo and Navigation Buttons */}
+                    <div className="flex-shrink-0">       {/* Northwest Logo */}
                       <img className="h-12 w-12" src={logo} alt="Workflow" />
                     </div>
-                    <div className="hidden md:block">
+                    <div className="hidden md:block">       {/* Navigation Buttons(hides when page is too thin) */}
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
                           <a
@@ -68,20 +68,15 @@ export default function Example() {
                       </div>
                     </div>
                   </div>
-                  <div className="hidden md:block">
+                  <div className="hidden md:block">       {/* Profile Pic/Button and Bell Icon(Hides when page is too thin) */}
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                      >
+                      <button type="button" className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">        {/* Bell Button */}
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
                       </button>
-
-                      {/* Profile dropdown */}
-                      <Menu as="div" className="ml-3 relative">
+                      <Menu as="div" className="ml-3 relative">       {/* Profile dropdown Code */}
                         <div>
-                          <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                          <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">       {/* Profile Button */}
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
@@ -120,7 +115,7 @@ export default function Example() {
                       </Menu>
                     </div>
                   </div>
-                  <div className="-mr-2 flex md:hidden">
+                  <div className="-mr-2 flex md:hidden">        {/* 3 Bar Menu button(Shows when webpage is too thin) */}
                     {/* Mobile menu button */}
                     <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open main menu</span>
@@ -199,24 +194,18 @@ export default function Example() {
           )}
         </Disclosure>
 
-        <header className="bg-gray-800 shadow">
+        <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold text-nwgreen">Faculty Dashboard</h1>
           </div>
         </header>
-        <main>
+        <main>        {/* Everything Below "Faculty Dashboard" */}
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
             <button> buttonName button</button>
 
-            {/* contains everything below the "faculty dashboard" header. Below that line underneath faculty dashboard */}
-          
-            <div className="px-4 py-6 sm:px-0">
-              {/* your code here */}
+            <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
-              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">
-                {/* this is where code goes that you want encased in the dashed border in center of screen */}
-                {/* button code here (if you want buttons inside the dashed box) */}
+              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
                 
               </div>
             </div>
