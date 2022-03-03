@@ -39,7 +39,8 @@ export default function Example() {
         ```
       */}
       <div className="min-h-full">
-      <Disclosure as="nav" className="bg-nwgreen">				{/* Nav Bar */}
+	  {/* Nav Bar */}
+      <Disclosure as="nav" className="bg-nwgreen">				
 					{({ open }) => (
 						<>
 							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ci">				{/* Padding Left and Right */}
