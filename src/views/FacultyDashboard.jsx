@@ -39,16 +39,17 @@ export default function Example() {
         ```
       */}
       <div className="min-h-full">
-      <Disclosure as="nav" className="bg-nwgreen">
+      <Disclosure as="nav" className="bg-nwgreen">				{/* Nav Bar */}
 					{({ open }) => (
 						<>
-							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ci">
-								<div className="flex items-center justify-between h-16">
-									<div className="flex items-center">
-										<div className="flex-shrink-0">
+							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ci">				{/* Padding Left and Right */}
+								<div className="flex items-center justify-between h-16">				{/* Padding inbetween Bell and Nav Buttons */}
+									
+									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
+										<div className="flex-shrink-0">				{/* Northwest Logo */}
 											<img className="h-12 w-12" src={logo} alt="Workflow" />
 										</div>
-										<div className="hidden md:block">
+										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}
 											<div className="ml-10 flex items-baseline space-x-4">
 												{navigation.map((item) => (
 													<a
@@ -69,19 +70,19 @@ export default function Example() {
 										</div>
 									</div>
 
-									<div className="hidden md:block">
+									<div className="hidden md:block">				{/* Profile Pic and Bell Icon(Hides when page is too thing) */}
 										<div className="ml-4 flex items-center md:ml-6">
 											<button
 												type="button"
 												className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-											>
+											>				{/* Bell Button */}
 												<span className="sr-only">View notifications</span>
 												<BellIcon className="h-6 w-6" aria-hidden="true" />
 											</button>
 
-											{/* Profile dropdown */}
-											<Menu as="div" className="ml-3 relative">
+											<Menu as="div" className="ml-3 relative">				{/* Profile Dropdown Code */}
 												<div>
+													{/* Profile Button */}
 													<Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 														<span className="sr-only">Open user menu</span>
 														<img
@@ -121,7 +122,7 @@ export default function Example() {
 											</Menu>
 										</div>
 									</div>
-									<div className="-mr-2 flex md:hidden">
+									<div className="-mr-2 flex md:hidden">				{/* 3 Bar Menu Button (Shows when webpage is too thin) */}
 										{/* Mobile menu button */}
 										<Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 											<span className="sr-only">Open main menu</span>
