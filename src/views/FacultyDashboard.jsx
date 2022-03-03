@@ -11,11 +11,8 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Apply", href: "#", current: true },
   { name: "Applications", href: "#", current: false },
-  { name: "Review", href: "#", current: false },
-  { name: "Offers", href: "#", current: false },
-  { name: "Get Help", href: "#", current: false },
+  { name: "Students", href: "#", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -214,7 +211,13 @@ export default function Example() {
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
               <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
-                
+			    <div className="m-4 p-10 w-1/2 h=1/2 border-2 border-dashed"> 
+				  <div>Hello</div>
+				</div>
+				<div className="m-4 p-10 w-1/2 h=1/2 border-2 border-dashed"> 
+				  <div>Hello</div>
+				</div>
+				
               </div>
             </div>
             {/* /End replace */}
