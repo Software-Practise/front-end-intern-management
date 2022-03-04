@@ -56,8 +56,8 @@ export default function Example() {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-gray",
+                                ? "bg-white-900 text-white"
+                                : "text-white-300 hover:bg-white-700 hover:text-white",
                               "px-3 py-2 rounded-md text-sm font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -201,7 +201,7 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Dashboard</h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Student Dashboard</h1>
           </div>
         </header>
         <main>
@@ -209,6 +209,54 @@ export default function Example() {
             {/* Replace with your content */}
             <div className="px-4 py-6 sm:px-0">
               <div className="border-4 border-dashed border-nwgreen rounded-lg h-96" />
+              <table class = "border-collapse mt-3 border border-slate-500 ...">
+                <thead>
+                  <tr>
+                    <th class="m-4 border border-slate-600 ...">Employer Name</th>
+                    <th class="m-4 border border-slate-600 ...">Supervisor First Name</th>
+                    <th class="m-4 border border-slate-600 ...">Supervisor Last Name</th>
+                    <th class="m-4 border border-slate-600 ...">Supervisor Position</th>
+                    <th class="m-4 border border-slate-600 ...">Supervisor Email</th>
+                    <th class="m-4 border border-slate-600 ...">Supervisor Phone Number</th>
+                    <th class="m-4 border border-slate-600 ...">Employer Street</th>
+                    <th class="m-4 border border-slate-600 ...">Employer City</th>
+                    <th class="m-4 border border-slate-600 ...">Employer State</th>
+                    <th class="m-4 border border-slate-600 ...">Employer Zip Code</th>
+                    <th class="m-4 border border-slate-600 ...">Position Offered(y/n)</th>
+                    <th class="m-4 border border-slate-600 ...">Pay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-slate-700 ...">Northwest Missouri State University</td>
+                    <td class="border border-slate-700 ...">Benjamin</td>
+                    <td class="border border-slate-700 ...">Weddle</td>
+                    <td class="border border-slate-700 ...">Office Assistant</td>
+                    <td class="border border-slate-700 ...">s530058@nwmissouri.edu</td>
+                    <td class="border border-slate-700 ...">(660) 562-1214</td>
+                    <td class="border border-slate-700 ...">800 University Drive</td>
+                    <td class="border border-slate-700 ...">Maryville</td>
+                    <td class="border border-slate-700 ...">MO</td>
+                    <td class="border border-slate-700 ...">64468</td>
+                    <td class="border border-slate-700 ...">Y</td>
+                    <td class="border border-slate-700 ...">$1850</td>
+                  </tr>
+                  <tr>
+                  <td class="border border-slate-700 ...">Northwest Missouri State University</td>
+                    <td class="border border-slate-700 ...">Benjamin</td>
+                    <td class="border border-slate-700 ...">Weddle</td>
+                    <td class="border border-slate-700 ...">Office Assistant</td>
+                    <td class="border border-slate-700 ...">s530058@nwmissouri.edu</td>
+                    <td class="border border-slate-700 ...">(660) 562-1214</td>
+                    <td class="border border-slate-700 ...">800 University Drive</td>
+                    <td class="border border-slate-700 ...">Maryville</td>
+                    <td class="border border-slate-700 ...">MO</td>
+                    <td class="border border-slate-700 ...">64468</td>
+                    <td class="border border-slate-700 ...">Y</td>
+                    <td class="border border-slate-700 ...">$1850</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             {/* /End replace */}
           </div>
