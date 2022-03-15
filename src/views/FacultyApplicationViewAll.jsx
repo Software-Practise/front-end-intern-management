@@ -203,7 +203,7 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Faculty Dashboard</h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Faculty Application View </h1>
           </div>
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}

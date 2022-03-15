@@ -16,9 +16,9 @@ function Home() {
       <h1>
         <a href="/login">Log In</a>
       </h1>
-      
+
       <h1>
-        <a href="/facultyApplication">faculty application view</a>
+        <a href="/facultyApplication">Faculty Application View</a>
       </h1>
     </div>
   );
