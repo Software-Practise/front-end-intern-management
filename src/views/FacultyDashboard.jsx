@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../assets/nwlogo.png";
+import React from 'react';
+import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 const user = {
   name: "Tom Cook",
@@ -20,9 +22,18 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
+const pieData = [
+	{name: 'Waiting for Approval', students: 100, fill: 'red'},
+	{name: 'Action needed from Intern', students: 200, fill: 'yellow'},
+	{name: 'Waiting for Dep Head', students: 300, fill: 'orange'},
+	{name: 'Approved', students: 400, fill: 'green'}
+  ];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+
 
 export default function Example() {
   return (
@@ -217,6 +228,10 @@ export default function Example() {
 			      </div>
 			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Top Right Box */} 
 			        <div> Pie chart of intern statuses</div>
+					<PieChart width={100} height={100}>
+                      <Pie data={pieData} dataKey="students" outerRadius={50} fill="#FFF">
+					  </Pie>
+                    </PieChart>
 			      </div>
 				</div>
 				<div className="flex flex-row h-1/2">					{/* Bottom Row */}
@@ -224,7 +239,7 @@ export default function Example() {
 				    <div> # of interns this semester vs last semester</div>
 			      </div>
 			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Bottom Right Box */} 
-			        <div> # of inters in state vs out of state</div>
+			        <div> # of interns in state vs out of state</div>
 			      </div>
 				</div>
 				
