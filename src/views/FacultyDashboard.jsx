@@ -211,12 +211,23 @@ export default function Example() {
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
               <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
-			    <div className="m-4 p-10 w-1/2 h=1/2 border-2 border-dashed"> 
-				  <div>Hello</div>
+			    <div className="flex flex-row h-1/2">					{/* Top Row */}
+				  <div className="p-10 border-2 border-dashed basis-1/2"> 				{/* Top Left Box */}
+				    <div> # of interns assigned</div>
+			      </div>
+			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Top Right Box */} 
+			        <div> Pie chart of intern statuses</div>
+			      </div>
 				</div>
-				<div className="m-4 p-10 w-1/2 h=1/2 border-2 border-dashed"> 
-				  <div>Hello</div>
+				<div className="flex flex-row h-1/2">					{/* Bottom Row */}
+				  <div className="p-10 border-2 border-dashed basis-1/2"> 				{/* Bottom Left Box */}
+				    <div> # of interns this semester vs last semester</div>
+			      </div>
+			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Bottom Right Box */} 
+			        <div> # of inters in state vs out of state</div>
+			      </div>
 				</div>
+				
 				
               </div>
             </div>
