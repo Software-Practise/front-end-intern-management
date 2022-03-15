@@ -208,8 +208,7 @@ export default function Example() {
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             {/* Replace with your content */}
             <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96" />
-              <table class = "border-collapse mt-3 border border-slate-500 ...">
+            <table class = "border-collapse mt-3 border border-slate-500 ...">
                 <thead>
                   <tr>
                     <th class="m-4 border border-slate-600 ...">Employer Name</th>
