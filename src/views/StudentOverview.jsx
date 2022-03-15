@@ -3,8 +3,6 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../assets/nwlogo.png";
-import React from 'react';
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 const user = {
   name: "Tom Cook",
@@ -13,8 +11,11 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Applications", href: "/facultyApplication", current: false },
-  { name: "Student Overview", href: "/studentOverview", current: false },
+  { name: "Apply", href: "#", current: true },
+  { name: "Applications", href: "#", current: false },
+  { name: "Review", href: "#", current: false },
+  { name: "Offers", href: "#", current: false },
+  { name: "Get Help", href: "#", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -22,18 +23,9 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
-const pieData = [
-	{name: 'Waiting for Approval', students: 100, fill: 'red'},
-	{name: 'Action needed from Intern', students: 200, fill: 'yellow'},
-	{name: 'Waiting for Dep Head', students: 300, fill: 'orange'},
-	{name: 'Approved', students: 400, fill: 'green'}
-  ];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
-
 
 export default function Example() {
   return (
@@ -47,8 +39,7 @@ export default function Example() {
         ```
       */}
       <div className="min-h-full">
-	  {/* Nav Bar */}
-      <Disclosure as="nav" className="bg-nwgreen">				
+      <Disclosure as="nav" className="bg-nwgreen">			
 					{({ open }) => (
 						<>
 							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ci">				{/* Padding Left and Right */}
@@ -212,36 +203,17 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Faculty Dashboard</h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Staff/Admin Student Overview </h1>
           </div>
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <button> buttonName button</button>
+
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
               <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
-			    <div className="flex flex-row h-1/2">					{/* Top Row */}
-				  <div className="p-10 border-2 border-dashed basis-1/2"> 				{/* Top Left Box */}
-				    <div> # of interns assigned</div>
-			      </div>
-			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Top Right Box */} 
-			        <div> Pie chart of intern statuses</div>
-					<PieChart width={100} height={100}>
-                      <Pie data={pieData} dataKey="students" outerRadius={50} fill="#FFF">
-					  </Pie>
-                    </PieChart>
-			      </div>
-				</div>
-				<div className="flex flex-row h-1/2">					{/* Bottom Row */}
-				  <div className="p-10 border-2 border-dashed basis-1/2"> 				{/* Bottom Left Box */}
-				    <div> # of interns this semester vs last semester</div>
-			      </div>
-			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Bottom Right Box */} 
-			        <div> # of interns in state vs out of state</div>
-			      </div>
-				</div>
-				
-				
+                
               </div>
             </div>
             {/* /End replace */}
