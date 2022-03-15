@@ -206,7 +206,7 @@ export default function Example() {
         </header>
         <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
+            {/* Pseudodata Table */}
             <div className="px-4 py-6 sm:px-0">
             <table class = "border-collapse mt-3 border border-slate-500 ...">
                 <thead>
@@ -221,8 +221,6 @@ export default function Example() {
                     <th class="m-4 border border-slate-600 ...">Employer City</th>
                     <th class="m-4 border border-slate-600 ...">Employer State</th>
                     <th class="m-4 border border-slate-600 ...">Employer Zip Code</th>
-                    <th class="m-4 border border-slate-600 ...">Position Offered(y/n)</th>
-                    <th class="m-4 border border-slate-600 ...">Pay</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -237,8 +235,6 @@ export default function Example() {
                     <td class="border border-slate-700 ...">Maryville</td>
                     <td class="border border-slate-700 ...">MO</td>
                     <td class="border border-slate-700 ...">64468</td>
-                    <td class="border border-slate-700 ...">Y</td>
-                    <td class="border border-slate-700 ...">$1850</td>
                   </tr>
                   <tr>
                   <td class="border border-slate-700 ...">Northwest Missouri State University</td>
@@ -251,8 +247,6 @@ export default function Example() {
                     <td class="border border-slate-700 ...">Maryville</td>
                     <td class="border border-slate-700 ...">MO</td>
                     <td class="border border-slate-700 ...">64468</td>
-                    <td class="border border-slate-700 ...">Y</td>
-                    <td class="border border-slate-700 ...">$1850</td>
                   </tr>
                 </tbody>
               </table>
