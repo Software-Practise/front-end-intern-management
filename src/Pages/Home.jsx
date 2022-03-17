@@ -10,7 +10,19 @@ function Home() {
         <a href="/faculty">Faculty View</a>
       </h1>
       <h1>
-        <a href="/student">Student View</a>
+        <a href="/studentApplications">Student View Applications</a>
+      </h1>
+      
+      <h1>
+        <a href="/studentApply">Student Apply</a>
+      </h1>
+
+      <h1>
+        <a href="/studentOffers">Student View Offers</a>
+      </h1>
+
+      <h1>
+        <a href="/studentGetHelp">Student Get Help</a>
       </h1>
 
       <h1>
