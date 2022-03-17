@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminDashboard from "./views/AdminDashboard";
 import StudentDashboard from "./views/StudentDashboard";
+import StudentApply from "./views/StudentApply";
+import StudentOffers from "./views/StudentOffers";
+import StudentGetHelp from "./views/StudentGetHelp";
 import FacultyDashboard from "./views/FacultyDashboard";
 import FacultyApplicationViewAll from "./views/FacultyApplicationViewAll";
 import StudentOverview from "./views/StudentOverview";
@@ -16,7 +19,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/faculty" element={<FacultyDashboard />} />
-        <Route path="/student" element={<StudentDashboard />} />
+        <Route path="/studentApplications" element={<StudentDashboard />} />
+        <Route path="/studentApply" element={<StudentApply />} />
+        <Route path="/studentOffers" element={<StudentOffers />} />
+        <Route path="/studentGetHelp" element={<StudentGetHelp />} />
         <Route path="/facultyApplication" element={<FacultyApplicationViewAll />} />
         <Route path="/studentOverview" element={<StudentOverview />} />
       </Routes>
