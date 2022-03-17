@@ -203,16 +203,22 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Staff/Admin Student Overview </h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Faculty/Admin Applications Overview </h1>
           </div>
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-
+		    <div> Search bar to filter results</div>
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
               <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
                 {/* put information here */}
+				<div> Will need some kind of a scrollable menu for items below</div>
+				<div> Buttons to filter by: name, major, internship y/n, etc.</div>
+				<div> 	- Student 1 </div>
+				<div> 	- Student 2 </div>
+				<div> 	- Student 3 </div>
+				<div> 	- Student 4 </div>
               </div>
             </div>
             {/* /End replace */}

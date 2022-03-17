@@ -12,7 +12,7 @@ const user = {
 };
 const navigation = [
   { name: "Apply", href: "#", current: true },
-  { name: "Applications", href: "#", current: false },
+  { name: "Applications", href: "/facultyStaffStudentOverview", current: false },
   { name: "Review", href: "#", current: false },
   { name: "Offers", href: "#", current: false },
   { name: "Get Help", href: "#", current: false },

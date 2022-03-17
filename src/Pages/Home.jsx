@@ -30,11 +30,13 @@ function Home() {
       </h1>
 
       <h1>
-        <a href="/facultyStaffApplicationView">Faculty/Admin Application View</a>
+        <a href="/facultyStaffApplicationView">Faculty/Admin Student Application View</a>
+        {/* route to view specific student's application details */}
       </h1>
 
       <h1>
-        <a href="/studentOverview">Faculty/Admin Student Overview</a>
+        <a href="/facultyStaffStudentOverview">Faculty/Admin Applications Overview</a>
+        {/* route to view list of all students. Clicking on a student routes to /facultyStaffApplicationView */}
       </h1>
     </div>
   );

@@ -6,7 +6,7 @@ import StudentOffers from "./views/StudentOffers";
 import StudentGetHelp from "./views/StudentGetHelp";
 import FacultyDashboard from "./views/FacultyDashboard";
 import FacultyAdminApplicationView from "./views/FacultyAdminApplicationView";
-import StudentOverview from "./views/StudentOverview";
+import FacultyAdminStudentOverview from "./views/FacultyAdminApplicationsAll";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 
@@ -24,7 +24,7 @@ function App() {
         <Route path="/studentOffers" element={<StudentOffers />} />
         <Route path="/studentGetHelp" element={<StudentGetHelp />} />
         <Route path="/facultyStaffApplicationView" element={<FacultyAdminApplicationView />} />
-        <Route path="/studentOverview" element={<StudentOverview />} />
+        <Route path="/facultyStaffStudentOverview" element={<FacultyAdminStudentOverview />} />
       </Routes>
     </Router>
   );
