@@ -11,10 +11,10 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Applications", href: "#", current: false },
-  { name: "Apply Now", href: "#", current: true },
-  { name: "Offers", href: "#", current: false },
-  { name: "Get Help", href: "#", current: false },
+  { name: "Applications", href: "/studentApplications", current: false },
+  { name: "Apply Now", href: "/studentApply", current: true },
+  { name: "Offers", href: "/studentOffers", current: false },
+  { name: "Get Help", href: "/studentGetHelp", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -201,14 +201,13 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Student Dashboard</h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Student Apply</h1>
           </div>
         </header>
         <main>
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Pseudodata Table */}
             <div className="px-4 py-6 sm:px-0">
-              
+              putting application type things here
             </div>
             {/* /End replace */}
           </div>
