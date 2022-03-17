@@ -12,10 +12,10 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Applications", href: "#", current: true },
-  { name: "Apply Now", href: "#", current: false },
-  { name: "Offers", href: "#", current: false },
-  { name: "Get Help", href: "#", current: false },
+  { name: "Applications", href: "/studentApplications", current: true },
+  { name: "Apply Now", href: "/studentApply", current: false },
+  { name: "Offers", href: "/studentOffers", current: false },
+  { name: "Get Help", href: "/studentGetHelp", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -240,7 +240,7 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Student Dashboard</h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Student Applications</h1>
           </div>
         </header>
         <main>

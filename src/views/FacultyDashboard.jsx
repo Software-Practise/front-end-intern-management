@@ -34,9 +34,9 @@ let waitDepHead = 300
 let numApproved = 400
 
 const statusData = [
-	{name: 'Waiting for Approval', students: waitApproval, fill: 'red'},
-	{name: 'Action needed from Intern', students: actionNeededIntern, fill: 'orange'},
-	{name: 'Waiting for Dep Head', students: waitDepHead, fill: 'blue'},
+	{name: 'Waiting for Approval', students: waitApproval, fill: 'gold'},
+	{name: 'Action needed from Intern', students: actionNeededIntern, fill: 'darkorange'},
+	{name: 'Waiting for Dep Head', students: waitDepHead, fill: 'navy'},
 	{name: 'Approved', students: numApproved, fill: 'green'}
 ];
 
@@ -46,7 +46,7 @@ let prevInterns = 300
 
 const semesterData = [
 	{name: 'Current Semester', students: currInterns, fill: 'green'},
-	{name: 'Last Semester', students: prevInterns, fill: 'red'}
+	{name: 'Last Semester', students: prevInterns, fill: 'darkorange'}
 ]
 
 /* Interns State Data */
@@ -55,7 +55,7 @@ let outStateInterns = 150
 
 const internStateData = [
 	{name: 'In-State Interns', students: inStateInterns, fill: 'green'},
-	{name: 'Out of State Interns', students: outStateInterns, fill: 'red'}
+	{name: 'Out of State Interns', students: outStateInterns, fill: 'darkorange'}
 ]
 
 function classNames(...classes) {
@@ -85,7 +85,7 @@ export default function Example() {
 									
 									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
 										<div className="flex-shrink-0">				{/* Northwest Logo */}
-											<img className="h-12 w-12" src={logo} alt="Workflow" />
+											<input type="image" src={logo} className="h-12 w-12" href= "/faculty" alt="Workflow" />
 										</div>
 										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}
 											<div className="ml-10 flex items-baseline space-x-4">
@@ -248,7 +248,7 @@ export default function Example() {
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
-              <div className="border-8 border-double border-nwgreen rounded-md h-96">       {/* Everything inside the dashed border */}
+              <div className="border-8 border-double border-nwgreen rounded-md h-full">       {/* Everything inside the dashed border */}
 			    <div className="flex flex-row h-1/2">					{/* Top Row */}
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
 				    <div> <b> Number of Your Interns! </b> </div>
@@ -257,8 +257,8 @@ export default function Example() {
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
 			        <div> <b> Intern Statuses </b> </div>
 					<PieChart width={500} height={200}>
-                      <Pie data={statusData} dataKey="students" outerRadius={50} fill="#FFF"/>
-					  <Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
+                      <Pie data={statusData} dataKey="students" outerRadius={75} fill="#FFF"/>
+					  <Legend layout="vertical" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
 					  <Tooltip/>
                     </PieChart>
 			      </div>
@@ -267,16 +267,16 @@ export default function Example() {
 				  <div className="p-1 border-t border-r border-solid basis-1/2"> 				{/* Bottom Left Box */}
 				    <div> <b> Interns This Semester vs Last Semester </b> </div>
 					<PieChart width={500} height={200}>
-					  <Pie data={semesterData} dataKey="students" outerRadius={50} fill="#FFF"/>
-					  <Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
+					  <Pie data={semesterData} dataKey="students" outerRadius={75} fill="#FFF"/>
+					  <Legend layout="vertical" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
 					  <Tooltip/>
 					</PieChart>
 			      </div>
 			      <div className="p-1 border-t border-l border-solid basis-1/2">				{/* Bottom Right Box */} 
 			        <div> <b> Interns In-State vs Out Of State </b> </div>
 					<PieChart width={500} height={200}>
-					  <Pie data={internStateData} dataKey="students" outerRadius={50} fill="#FFF"/>
-					  <Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
+					  <Pie data={internStateData} dataKey="students" outerRadius={75} fill="#FFF"/>
+					  <Legend layout="vertical" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
 					  <Tooltip/>
 					</PieChart>
 			      </div>
