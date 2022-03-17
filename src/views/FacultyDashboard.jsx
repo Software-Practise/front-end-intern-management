@@ -6,28 +6,57 @@ import logo from "../assets/nwlogo.png";
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
+/* User Information */
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
   imageUrl:
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
+
+/* Nav Bar Buttons */
 const navigation = [
   { name: "Applications", href: "/facultyApplication", current: false },
   { name: "Student Overview", href: "/studentOverview", current: false },
 ];
+
+/* User Buttons */
 const userNavigation = [
   { name: "Your Profile", href: "#" },
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
 
-const pieData = [
-	{name: 'Waiting for Approval', students: 100, fill: 'red'},
-	{name: 'Action needed from Intern', students: 200, fill: 'yellow'},
-	{name: 'Waiting for Dep Head', students: 300, fill: 'orange'},
-	{name: 'Approved', students: 400, fill: 'green'}
-  ];
+/* Interns Status Data */
+let waitApproval = 100
+let actionNeededIntern = 200
+let waitDepHead = 300
+let numApproved = 400
+
+const statusData = [
+	{name: 'Waiting for Approval', students: waitApproval, fill: 'red'},
+	{name: 'Action needed from Intern', students: actionNeededIntern, fill: 'orange'},
+	{name: 'Waiting for Dep Head', students: waitDepHead, fill: 'blue'},
+	{name: 'Approved', students: numApproved, fill: 'green'}
+];
+
+/* Interns Semester Data */
+let currInterns = 100
+let prevInterns = 300
+
+const semesterData = [
+	{name: 'Current Semester', students: currInterns, fill: 'green'},
+	{name: 'Last Semester', students: prevInterns, fill: 'red'}
+]
+
+/* Interns State Data */
+let inStateInterns = 400
+let outStateInterns = 150
+
+const internStateData = [
+	{name: 'In-State Interns', students: inStateInterns, fill: 'green'},
+	{name: 'Out of State Interns', students: outStateInterns, fill: 'red'}
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -219,25 +248,37 @@ export default function Example() {
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
-              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
+              <div className="border-8 border-double border-nwgreen rounded-md h-96">       {/* Everything inside the dashed border */}
 			    <div className="flex flex-row h-1/2">					{/* Top Row */}
-				  <div className="p-10 border-2 border-dashed basis-1/2"> 				{/* Top Left Box */}
-				    <div> # of interns assigned</div>
+				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
+				    <div> <b> Number of Your Interns! </b> </div>
+					<div> (Insert Number Here)</div>
 			      </div>
-			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Top Right Box */} 
-			        <div> Pie chart of intern statuses</div>
-					<PieChart width={100} height={100}>
-                      <Pie data={pieData} dataKey="students" outerRadius={50} fill="#FFF">
-					  </Pie>
+			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
+			        <div> <b> Intern Statuses </b> </div>
+					<PieChart width={500} height={200}>
+                      <Pie data={statusData} dataKey="students" outerRadius={50} fill="#FFF"/>
+					  <Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
+					  <Tooltip/>
                     </PieChart>
 			      </div>
 				</div>
 				<div className="flex flex-row h-1/2">					{/* Bottom Row */}
-				  <div className="p-10 border-2 border-dashed basis-1/2"> 				{/* Bottom Left Box */}
-				    <div> # of interns this semester vs last semester</div>
+				  <div className="p-1 border-t border-r border-solid basis-1/2"> 				{/* Bottom Left Box */}
+				    <div> <b> Interns This Semester vs Last Semester </b> </div>
+					<PieChart width={500} height={200}>
+					  <Pie data={semesterData} dataKey="students" outerRadius={50} fill="#FFF"/>
+					  <Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
+					  <Tooltip/>
+					</PieChart>
 			      </div>
-			      <div className="p-10 border-2 border-dashed basis-1/2">				{/* Bottom Right Box */} 
-			        <div> # of interns in state vs out of state</div>
+			      <div className="p-1 border-t border-l border-solid basis-1/2">				{/* Bottom Right Box */} 
+			        <div> <b> Interns In-State vs Out Of State </b> </div>
+					<PieChart width={500} height={200}>
+					  <Pie data={internStateData} dataKey="students" outerRadius={50} fill="#FFF"/>
+					  <Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true}/>
+					  <Tooltip/>
+					</PieChart>
 			      </div>
 				</div>
 				
