@@ -1,8 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../assets/nwlogo.png";
+import TableData from './falculty.json';
 
 const user = {
   name: "Tom Cook",
@@ -26,6 +27,45 @@ const userNavigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+function DynamicTable(){
+  // get table column
+  const column = Object.keys(TableData[0]);
+
+  //get table heading data
+  const ThData =()=>{
+    return column.map((data)=>{
+      return <th key={data}>{data}</th>
+    })
+  }
+
+  //get table row data
+  const tdData =() =>{
+    return TableData.map((data)=>{
+      return(
+        <tr>
+          {
+            column.map((v)=>{
+              return <td>{data[v]}</td>
+            })
+          }
+        </tr>
+      )
+    })
+  }
+
+  return (
+    <table className="table">
+      <thead>
+        <tr>{ThData()}</tr>
+      </thead>
+      <tbody>
+        {tdData()}
+      </tbody>
+    </table>
+  )
+}
+
 
 export default function Example() {
   return (
@@ -208,48 +248,8 @@ export default function Example() {
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             {/* Pseudodata Table */}
             <div className="px-4 py-6 sm:px-0">
-            <table class = "border-collapse mt-3 border border-slate-500 ...">
-                <thead>
-                  <tr>
-                    <th class="m-4 border border-slate-600 ...">Employer Name</th>
-                    <th class="m-4 border border-slate-600 ...">Supervisor First Name</th>
-                    <th class="m-4 border border-slate-600 ...">Supervisor Last Name</th>
-                    <th class="m-4 border border-slate-600 ...">Supervisor Position</th>
-                    <th class="m-4 border border-slate-600 ...">Supervisor Email</th>
-                    <th class="m-4 border border-slate-600 ...">Supervisor Phone Number</th>
-                    <th class="m-4 border border-slate-600 ...">Employer Street</th>
-                    <th class="m-4 border border-slate-600 ...">Employer City</th>
-                    <th class="m-4 border border-slate-600 ...">Employer State</th>
-                    <th class="m-4 border border-slate-600 ...">Employer Zip Code</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="border border-slate-700 ...">Northwest Missouri State University</td>
-                    <td class="border border-slate-700 ...">Benjamin</td>
-                    <td class="border border-slate-700 ...">Weddle</td>
-                    <td class="border border-slate-700 ...">Office Assistant</td>
-                    <td class="border border-slate-700 ...">s530058@nwmissouri.edu</td>
-                    <td class="border border-slate-700 ...">(660) 562-1214</td>
-                    <td class="border border-slate-700 ...">800 University Drive</td>
-                    <td class="border border-slate-700 ...">Maryville</td>
-                    <td class="border border-slate-700 ...">MO</td>
-                    <td class="border border-slate-700 ...">64468</td>
-                  </tr>
-                  <tr>
-                  <td class="border border-slate-700 ...">Northwest Missouri State University</td>
-                    <td class="border border-slate-700 ...">Benjamin</td>
-                    <td class="border border-slate-700 ...">Weddle</td>
-                    <td class="border border-slate-700 ...">Office Assistant</td>
-                    <td class="border border-slate-700 ...">s530058@nwmissouri.edu</td>
-                    <td class="border border-slate-700 ...">(660) 562-1214</td>
-                    <td class="border border-slate-700 ...">800 University Drive</td>
-                    <td class="border border-slate-700 ...">Maryville</td>
-                    <td class="border border-slate-700 ...">MO</td>
-                    <td class="border border-slate-700 ...">64468</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div id='table'></div>
+              <DynamicTable />
             </div>
             {/* /End replace */}
           </div>

@@ -1,0 +1,67 @@
+[
+  {
+    "employer_id": 1,
+    "company": "PLASMOSIS",
+    "firstname": "Carmella",
+    "lastname": "Richardson",
+    "position": "Hiring Manager",
+    "email": "carmellarichardson@plasmosis.com",
+    "phone": "+1 (831) 491-3306",
+    "street": "761 Hendrickson Place",
+    "city": "Bladensburg",
+    "state": "Iowa",
+    "zipcode": 557
+  },
+  {
+    "employer_id": 2,
+    "company": "VERTIDE",
+    "firstname": "Farmer",
+    "lastname": "Andrews",
+    "position": "Hiring Manager",
+    "email": "farmerandrews@vertide.com",
+    "phone": "+1 (810) 464-3424",
+    "street": "397 Schaefer Street",
+    "city": "Mooresburg",
+    "state": "Vermont",
+    "zipcode": 5143
+  },
+  {
+    "employer_id": 3,
+    "company": "VIRXO",
+    "firstname": "Belinda",
+    "lastname": "Joseph",
+    "position": "Hiring Manager",
+    "email": "belindajoseph@virxo.com",
+    "phone": "+1 (809) 487-2438",
+    "street": "930 Berkeley Place",
+    "city": "Kylertown",
+    "state": "Idaho",
+    "zipcode": 9167
+  },
+  {
+    "employer_id": 4,
+    "company": "FLUM",
+    "firstname": "Foster",
+    "lastname": "Horne",
+    "position": "Hiring Manager",
+    "email": "fosterhorne@flum.com",
+    "phone": "+1 (849) 466-2116",
+    "street": "151 Livingston Street",
+    "city": "Shindler",
+    "state": "South Carolina",
+    "zipcode": 1361
+  },
+  {
+    "employer_id": 5,
+    "company": "OBONES",
+    "firstname": "Dionne",
+    "lastname": "Oconnor",
+    "position": "Hiring Manager",
+    "email": "dionneoconnor@obones.com",
+    "phone": "+1 (930) 434-2831",
+    "street": "680 Visitation Place",
+    "city": "Belleview",
+    "state": "Minnesota",
+    "zipcode": 9658
+  }
+]
