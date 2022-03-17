@@ -47,7 +47,7 @@ export default function Example() {
 									
 									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
 										<div className="flex-shrink-0">				{/* Northwest Logo */}
-											<img className="h-12 w-12" src={logo} alt="Workflow" />
+										  <input type="image" src={logo} className="h-12 w-12" href= "/faculty" alt="Workflow" />
 										</div>
 										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}
 											<div className="ml-10 flex items-baseline space-x-4">
