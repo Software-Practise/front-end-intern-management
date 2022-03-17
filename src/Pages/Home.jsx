@@ -30,7 +30,7 @@ function Home() {
       </h1>
 
       <h1>
-        <a href="/facultyApplication">Faculty/Admin Application View</a>
+        <a href="/facultyStaffApplicationView">Faculty/Admin Application View</a>
       </h1>
 
       <h1>

@@ -208,12 +208,11 @@ export default function Example() {
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            <button> buttonName button</button>
 
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
               <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
-                
+                {/* put information here */}
               </div>
             </div>
             {/* /End replace */}

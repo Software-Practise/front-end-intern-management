@@ -203,17 +203,48 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Faculty/Staff Application View </h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Faculty/Admin Application View </h1>
           </div>
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            <button> buttonName button</button>
 
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
-              <div className="border-4 border-dashed border-nwgreen rounded-lg h-96">       {/* Everything inside the dashed border */}
-                
+			<div className="border-8 border-double border-nwgreen rounded-md h-96">       {/* Everything inside the dashed border */}
+			    <div className="flex flex-row h-1/2">					{/* Top Row */}
+				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
+				    <div> <b> Student Information </b> </div>
+
+					<div> Name: </div> 
+					<div> Major: </div>
+					<div> Est Graduation Date:  </div>
+					<div> Credits Needed to Graduate (optional): </div>
+
+			      </div>
+			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
+			        <div> <b> Status of Application </b> </div>
+
+					<div> Status (approved/rejected): </div>
+					<div> Faculty Advisor: </div>
+					<div> Insert status graphic (green/red) </div>
+
+			      </div>
+				</div>
+				<div className="">					{/* Bottom Row */}
+				  <div className="p-1 border-t border-r border-solid basis"> 				{/* Bottom Left Box */}
+				    <div> <b> Internship Information </b> </div>
+
+					<div> Company: (name) Location: (location) </div>
+					<div> Intern Position: </div>
+					<div> Start Date: (xx/yy/zzzz) End Date: (xx/yy/zzzz) </div>
+					<div> Supervisor Name: </div>
+					<div> Supervisor Contact: </div>
+
+			      </div>
+				</div>
+				
+				
               </div>
             </div>
             {/* /End replace */}
