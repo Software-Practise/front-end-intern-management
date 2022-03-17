@@ -38,6 +38,12 @@ function Home() {
         <a href="/facultyStaffStudentOverview">Faculty/Admin Applications Overview</a>
         {/* route to view list of all students. Clicking on a student routes to /facultyStaffApplicationView */}
       </h1>
+
+      <h1>
+        <a href="/ThomasTest">Thomas' Responsive Table Test View</a>
+        {/* route to view list of all students. Clicking on a student routes to /facultyStaffApplicationView */}
+      </h1>
+
     </div>
   );
 }

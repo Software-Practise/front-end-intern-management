@@ -7,6 +7,7 @@ import StudentGetHelp from "./views/StudentGetHelp";
 import FacultyDashboard from "./views/FacultyDashboard";
 import FacultyAdminApplicationView from "./views/FacultyAdminApplicationView";
 import FacultyAdminStudentOverview from "./views/FacultyAdminApplicationsAll";
+import ThomasTest from "./views/ThomasAppAllTestView";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/studentGetHelp" element={<StudentGetHelp />} />
         <Route path="/facultyStaffApplicationView" element={<FacultyAdminApplicationView />} />
         <Route path="/facultyStaffStudentOverview" element={<FacultyAdminStudentOverview />} />
+        <Route path="/ThomasTest" element={<ThomasTest />} />
       </Routes>
     </Router>
   );
