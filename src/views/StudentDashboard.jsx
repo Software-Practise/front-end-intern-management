@@ -35,7 +35,7 @@ function DynamicTable(){
   //get table heading data
   const ThData =()=>{
     return column.map((data)=>{
-      return <th key={data}>{data}</th>
+      return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
     })
   }
 
@@ -46,7 +46,7 @@ function DynamicTable(){
         <tr>
           {
             column.map((v)=>{
-              return <td>{data[v]}</td>
+              return <td className="border border-slate-700 ...">{data[v]}</td>
             })
           }
         </tr>
@@ -55,7 +55,7 @@ function DynamicTable(){
   }
 
   return (
-    <table className="table">
+    <table className="border-collapse mt-3 border border-slate-500 ...">
       <thead>
         <tr>{ThData()}</tr>
       </thead>
