@@ -14,7 +14,6 @@ const user = {
 const navigation = [
   { name: "Applications", href: "#", current: true },
   { name: "Apply Now", href: "#", current: false },
-  { name: "Review", href: "#", current: false },
   { name: "Offers", href: "#", current: false },
   { name: "Get Help", href: "#", current: false },
 ];
