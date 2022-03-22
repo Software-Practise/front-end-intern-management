@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../assets/nwlogo.png";
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
 const user = {
 	name: "Tom Cook",
@@ -22,47 +22,46 @@ const userNavigation = [
 	{ name: "Sign out", href: "#" },
 ];
 
-
 /* Interns Status Data */
-let waitApproval = 100
-let actionNeededIntern = 200
-let waitDepHead = 300
-let numApproved = 400
+let waitApproval = 100;
+let actionNeededIntern = 200;
+let waitDepHead = 300;
+let numApproved = 400;
 
 const statusData = [
-	{ name: 'Waiting for Approval', students: waitApproval, fill: 'red' },
-	{ name: 'Action needed from Intern', students: actionNeededIntern, fill: 'orange' },
-	{ name: 'Waiting for Dep Head', students: waitDepHead, fill: 'blue' },
-	{ name: 'Approved', students: numApproved, fill: 'green' }
+	{ name: "Waiting for Approval", students: waitApproval, fill: "red" },
+	{
+		name: "Action needed from Intern",
+		students: actionNeededIntern,
+		fill: "orange",
+	},
+	{ name: "Waiting for Dep Head", students: waitDepHead, fill: "blue" },
+	{ name: "Approved", students: numApproved, fill: "green" },
 ];
-const dummyNumbers = [
-	{ "Faculty": 10 },
-	{ "Students": 100 },
-	{ "Clients": 8 },
-]
+const dummyNumbers = [{ Faculty: 10 }, { Students: 100 }, { Clients: 8 }];
 /* Interns Semester Data */
-let currInterns = 100
-let prevInterns = 300
+let currInterns = 100;
+let prevInterns = 300;
 
 const semesterData = [
-	{ name: 'Current Semester', students: currInterns, fill: 'green' },
-	{ name: 'Last Semester', students: prevInterns, fill: 'red' }
-]
+	{ name: "Current Semester", students: currInterns, fill: "green" },
+	{ name: "Last Semester", students: prevInterns, fill: "red" },
+];
 
 /* Interns State Data */
-let inStateInterns = 400
-let outStateInterns = 150
+let inStateInterns = 400;
+let outStateInterns = 150;
 
 const internStateData = [
-	{ name: 'In-State Interns', students: inStateInterns, fill: 'green' },
-	{ name: 'Out of State Interns', students: outStateInterns, fill: 'red' }
-]
+	{ name: "In-State Interns", students: inStateInterns, fill: "green" },
+	{ name: "Out of State Interns", students: outStateInterns, fill: "red" },
+];
 
 const pieData = [
-	{ name: 'Waiting for Approval', students: 100, fill: 'red' },
-	{ name: 'Action needed from Intern', students: 200, fill: 'yellow' },
-	{ name: 'Waiting for Dep Head', students: 300, fill: 'orange' },
-	{ name: 'Approved', students: 400, fill: 'green' }
+	{ name: "Waiting for Approval", students: 100, fill: "red" },
+	{ name: "Action needed from Intern", students: 200, fill: "yellow" },
+	{ name: "Waiting for Dep Head", students: 300, fill: "orange" },
+	{ name: "Approved", students: 400, fill: "green" },
 ];
 
 function classNames(...classes) {
@@ -251,56 +250,134 @@ export default function Example() {
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						{/* Replace with your content */}
 						<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-							<div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
-								<div className="border-8 border border-nwgreen rounded-md h-48">       {/* Everything inside the first green outer border*/}
-									<div className="flex flex-row h-48">				
-										<div className="p-1 border-solid basis-1/3"> 				{/* Left Box */}
-											<div> <b> Total Faculty</b> </div>
+							<div className="px-4 py-6 sm:px-0">
+								{" "}
+								{/* Everything Below Button */}
+								<div className="border-8 border text-center border-nwgreen rounded-md h-48">
+									{" "}
+									{/* Everything inside the first green outer border*/}
+									<div className="flex flex-row h-48">
+										<div className="p-1 border-solid basis-1/3">
+											{" "}
+											{/* Left Box */}
+											<div>
+												{" "}
+												<b> Total Faculty</b>{" "}
+											</div>
 										</div>
-										<div className="p-1 border-solid basis-1/3">				{/* Center Box */}
-											<div> <b> Total Students </b> </div>
-
+										<div className="p-1 border-solid basis-1/3">
+											{" "}
+											{/* Center Box */}
+											<div>
+												{" "}
+												<b> Total Students </b>{" "}
+											</div>
 										</div>
-										<div className="p-1 basis-1/3">				{/* Right Box */}
-											<div> <b> Total Clients </b> </div>
-
+										<div className="p-1 basis-1/3">
+											{" "}
+											{/* Right Box */}
+											<div>
+												{" "}
+												<b> Total Clients </b>{" "}
+											</div>
 										</div>
 									</div>
 								</div>
-								<div className="border-8 border border-nwgreen rounded-md h-96">       {/* Everything inside the green outer border*/}
-									<div className="flex flex-row h-1/2">					{/* Top Row */}
-										<div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
-											<div> <b> Faculty - Intern Ratio</b> </div>
+								<div className="border-8 border border-nwgreen rounded-md h-96">
+									{" "}
+									{/* Everything inside the green outer border*/}
+									<div className="flex flex-row h-1/2">
+										{" "}
+										{/* Top Row */}
+										<div className="p-1 border-b border-r border-solid basis-1/2">
+											{" "}
+											{/* Top Left Box */}
+											<div>
+												{" "}
+												<b> Faculty - Intern Ratio</b>{" "}
+											</div>
 											<div> 1:10</div>
 										</div>
-										<div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */}
-											<div> <b> Intern Statuses </b> </div>
+										<div className="p-1 border-b border-l border-solid basis-1/2">
+											{" "}
+											{/* Top Right Box */}
+											<div>
+												{" "}
+												<b> Intern Statuses </b>{" "}
+											</div>
 											<PieChart width={500} height={200}>
-												<Pie data={statusData} dataKey="students" outerRadius={50} fill="#FFF" />
-												<Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true} />
+												<Pie
+													data={statusData}
+													dataKey="students"
+													outerRadius={50}
+													fill="#FFF"
+												/>
+												<Legend
+													layout="horizontal"
+													width={200}
+													iconSize={10}
+													verticalAlign="center"
+													align="right"
+													scaleToFit={true}
+												/>
 												<Tooltip />
 											</PieChart>
 										</div>
 									</div>
-									<div className="flex flex-row h-1/2">					{/* Bottom Row */}
-										<div className="p-1 border-t border-r border-solid basis-1/2"> 				{/* Bottom Left Box */}
-											<div> <b> Interns This Semester vs Last Semester </b> </div>
+									<div className="flex flex-row h-1/2">
+										{" "}
+										{/* Bottom Row */}
+										<div className="p-1 border-t border-r border-solid basis-1/2">
+											{" "}
+											{/* Bottom Left Box */}
+											<div>
+												{" "}
+												<b> Interns This Semester vs Last Semester </b>{" "}
+											</div>
 											<PieChart width={500} height={200}>
-												<Pie data={semesterData} dataKey="students" outerRadius={50} fill="#FFF" />
-												<Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true} />
+												<Pie
+													data={semesterData}
+													dataKey="students"
+													outerRadius={50}
+													fill="#FFF"
+												/>
+												<Legend
+													layout="horizontal"
+													width={200}
+													iconSize={10}
+													verticalAlign="center"
+													align="right"
+													scaleToFit={true}
+												/>
 												<Tooltip />
 											</PieChart>
 										</div>
-										<div className="p-1 border-t border-l border-solid basis-1/2">				{/* Bottom Right Box */}
-											<div> <b> Interns In-State vs Out Of State </b> </div>
+										<div className="p-1 border-t border-l border-solid basis-1/2">
+											{" "}
+											{/* Bottom Right Box */}
+											<div>
+												{" "}
+												<b> Interns In-State vs Out Of State </b>{" "}
+											</div>
 											<PieChart width={500} height={200}>
-												<Pie data={internStateData} dataKey="students" outerRadius={50} fill="#FFF" />
-												<Legend layout="horizontal" width={200} iconSize={10} verticalAlign="center" align="right" scaleToFit={true} />
+												<Pie
+													data={internStateData}
+													dataKey="students"
+													outerRadius={50}
+													fill="#FFF"
+												/>
+												<Legend
+													layout="horizontal"
+													width={200}
+													iconSize={10}
+													verticalAlign="center"
+													align="right"
+													scaleToFit={true}
+												/>
 												<Tooltip />
 											</PieChart>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
