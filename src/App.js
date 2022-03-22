@@ -10,6 +10,7 @@ import FacultyAdminStudentOverview from "./views/FacultyAdminApplicationsAll";
 import ThomasTest from "./views/ThomasAppAllTestView";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import FacultyGetHelp from "./views/FacultyGetHelp"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/facultyStaffApplicationView" element={<FacultyAdminApplicationView />} />
         <Route path="/facultyStaffStudentOverview" element={<FacultyAdminStudentOverview />} />
         <Route path="/ThomasTest" element={<ThomasTest />} />
+        <Route path="/FacultyGetHelp" element={<FacultyGetHelp />} />
       </Routes>
     </Router>
   );

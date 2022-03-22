@@ -17,7 +17,8 @@ const user = {
 /* Nav Bar Buttons */
 const navigation = [
   { name: "Applications", href: "/facultyStaffStudentOverview", current: false },
-  { name: "Student Overview", href: "/studentOverview", current: false },
+  { name: "My Interns", href: "/studentOverview", current: false },
+  { name: "Get Help", href: "/FacultyGetHelp", current: false }
 ];
 
 /* User Buttons */
@@ -248,7 +249,7 @@ export default function Example() {
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
 
-              <div className="border-8 border-double border-nwgreen rounded-md h-full">       {/* Everything inside the dashed border */}
+              <div className="border-8 border-double border-nwgreen rounded-md h-full">       {/* Everything inside the double border */}
 			    <div className="flex flex-row h-1/2">					{/* Top Row */}
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
 				    <div> <b> Number of Your Interns! </b> </div>
