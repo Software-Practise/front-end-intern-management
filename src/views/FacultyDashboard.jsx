@@ -16,8 +16,9 @@ const user = {
 
 /* Nav Bar Buttons */
 const navigation = [
-  { name: "Applications", href: "/facultyStaffStudentOverview", current: false },
-  { name: "My Interns", href: "/studentOverview", current: false },
+  { name: "Dashboard", href: "/faculty", current: false },
+  { name: "Applications", href: "/FacultyApplicationList", current: false },
+  { name: "My Interns", href: "/FacultyInternsList", current: false },
   { name: "Get Help", href: "/FacultyGetHelp", current: false }
 ];
 
@@ -86,7 +87,9 @@ export default function Example() {
 									
 									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
 										<div className="flex-shrink-0">				{/* Northwest Logo */}
-											<input type="image" src={logo} className="h-12 w-12" href= "/faculty" alt="Workflow" />
+											<a>
+												<img type="image" src={logo} className="h-12 w-12" href= "/faculty" alt="Workflow" />
+											</a>
 										</div>
 										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}
 											<div className="ml-10 flex items-baseline space-x-4">

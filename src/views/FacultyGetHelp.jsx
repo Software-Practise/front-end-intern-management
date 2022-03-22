@@ -16,8 +16,9 @@ const user = {
 
 /* Nav Bar Buttons */
 const navigation = [
-  { name: "Applications", href: "/facultyStaffStudentOverview", current: false },
-  { name: "My Interns", href: "/studentOverview", current: false },
+  { name: "Dashboard", href: "/faculty", current: false },
+  { name: "Applications", href: "/FacultyApplicationList", current: false },
+  { name: "My Interns", href: "/FacultyInternsList", current: false },
   { name: "Get Help", href: "/FacultyGetHelp", current: false }
 ];
 

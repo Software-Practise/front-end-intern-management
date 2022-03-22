@@ -6,11 +6,12 @@ import StudentOffers from "./views/StudentOffers";
 import StudentGetHelp from "./views/StudentGetHelp";
 import FacultyDashboard from "./views/FacultyDashboard";
 import FacultyAdminApplicationView from "./views/FacultyAdminApplicationView";
-import FacultyAdminStudentOverview from "./views/FacultyAdminApplicationsAll";
+import FacultyApplicationList from "./views/FacultyApplicationList";
 import ThomasTest from "./views/ThomasAppAllTestView";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import FacultyGetHelp from "./views/FacultyGetHelp"
+import FacultyGetHelp from "./views/FacultyGetHelp";
+import FacultyInternsList from "./views/FacultyInternsList";
 
 function App() {
   return (
@@ -26,9 +27,10 @@ function App() {
         <Route path="/studentOffers" element={<StudentOffers />} />
         <Route path="/studentGetHelp" element={<StudentGetHelp />} />
         <Route path="/facultyStaffApplicationView" element={<FacultyAdminApplicationView />} />
-        <Route path="/facultyStaffStudentOverview" element={<FacultyAdminStudentOverview />} />
+        <Route path="/FacultyApplicationList" element={<FacultyApplicationList />} />
         <Route path="/ThomasTest" element={<ThomasTest />} />
         <Route path="/FacultyGetHelp" element={<FacultyGetHelp />} />
+        <Route path="/FacultyInternsList" element={<FacultyInternsList />} />
       </Routes>
     </Router>
   );
