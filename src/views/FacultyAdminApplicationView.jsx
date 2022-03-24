@@ -11,9 +11,10 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-	{ name: "Applications", href: "/facultyStaffStudentOverview", current: false },
-	{ name: "My Interns", href: "/studentOverview", current: false },
-	{ name: "Get Help", href: "/FacultyGetHelp", current: false }
+  { name: "Dashboard", href: "/faculty", current: false },
+  { name: "Applications", href: "/FacultyApplicationList", current: false },
+  { name: "My Interns", href: "/FacultyInternsList", current: false },
+  { name: "Get Help", href: "/FacultyGetHelp", current: false }
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
