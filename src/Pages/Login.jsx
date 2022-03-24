@@ -69,20 +69,19 @@ function Login() {
 					</div>
 					<div className="mb-4">
 						{" "}
-						{/* Northwest Email Text Block */}
+						{/* Northwest Username Text Block */}
 						<label className="block text-gray-700 text-sm font-normal mb-2">
 							{" "}
-							{/* Email Input Label */}
-							Northwest Email
+							{/* Username Input Label */}
+							Northwest Username
 						</label>
 						<input
 							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-							type="email"
-							placeholder="Email"
+							placeholder="Username"
 							name="nwId"
 							onChange={handleChange}
 						/>{" "}
-						{/* Email Input Block */}
+						{/* Username Input Block */}
 					</div>
 					<div className="mb-6">
 						{" "}
