@@ -1,11 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { userLogin } from "../api/apiRequests";
 
 function Login() {
+	const [values, setValues] = useState({
+		nwId: "",
+		password: "",
+	});
+	const [user, setUser] = useState();
+
+	useEffect(() => {
+		const loggedInUserAccess = localStorage.getItem("userAccess");
+		if (loggedInUserAccess) {
+			const foundUser = loggedInUserAccess;
+			console.log("Logged in user", loggedInUserAccess);
+			setUser(foundUser);
+		}
+	}, []);
+
 	let navigate = useNavigate();
 	const handleSubmit = () => {
-		navigate("/");
+		console.log(JSON.stringify(values));
+		try {
+			userLogin(JSON.stringify(values)).then((response) => {
+				if (response.status === 200) {
+					console.log("response", response);
+					setUser(response.data.access_token);
+
+					// Store User in local storage
+					localStorage.setItem("user", response.data.access_token);
+					localStorage.setItem("userAccess", response.data.access_token);
+					localStorage.setItem("userRefresh", response.data.refresh_token);
+					console.log("Response Data", response.data);
+					//navigate("/");
+				}
+			});
+		} catch (error) {
+			console.log("ERROR", error.message);
+			window.alert("Invalid Login");
+		}
+
+		//navigate("/");
 	};
+
+	const handleChange = (e) => {
+		setValues((values) => ({
+			...values,
+			[e.target.name]: e.target.value,
+		}));
+	};
+
+	if (user) {
+		return <div>{navigate("/")}</div>;
+	}
+
 	return (
 		<div className="flex bg-nwgreen items-center justify-center p-12">
 			{" "}
@@ -31,6 +79,8 @@ function Login() {
 							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							type="email"
 							placeholder="Email"
+							name="nwId"
+							onChange={handleChange}
 						/>{" "}
 						{/* Email Input Block */}
 					</div>
@@ -46,6 +96,8 @@ function Login() {
 							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 							type="password"
 							placeholder="Password"
+							name="password"
+							onChange={handleChange}
 						/>{" "}
 						{/* Password Input Block */}
 					</div>
