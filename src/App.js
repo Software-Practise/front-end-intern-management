@@ -5,7 +5,7 @@ import StudentApply from "./views/StudentApply";
 import StudentOffers from "./views/StudentOffers";
 import StudentGetHelp from "./views/StudentGetHelp";
 import FacultyDashboard from "./views/FacultyDashboard";
-import FacultyAdminApplicationView from "./views/FacultyAdminApplicationView";
+import FacultyApplicationView from "./views/FacultyApplicationView";
 import FacultyApplicationList from "./views/FacultyApplicationList";
 import ThomasTest from "./views/ThomasAppAllTestView";
 import Home from "./Pages/Home";
@@ -26,7 +26,7 @@ function App() {
         <Route path="/studentApply" element={<StudentApply />} />
         <Route path="/studentOffers" element={<StudentOffers />} />
         <Route path="/studentGetHelp" element={<StudentGetHelp />} />
-        <Route path="/facultyStaffApplicationView" element={<FacultyAdminApplicationView />} />
+        <Route path="/FacultyApplicationView" element={<FacultyApplicationView />} />
         <Route path="/FacultyApplicationList" element={<FacultyApplicationList />} />
         <Route path="/ThomasTest" element={<ThomasTest />} />
         <Route path="/FacultyGetHelp" element={<FacultyGetHelp />} />
