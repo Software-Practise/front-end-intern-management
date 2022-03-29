@@ -11,10 +11,11 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "/Faculty", current: false },
-  { name: "Applications", href: "/FacultyApplicationList", current: false },
-  { name: "My Interns", href: "/FacultyInternsList", current: false },
-  { name: "Get Help", href: "/FacultyGetHelp", current: false }
+  { name: "Apply", href: "#", current: true },
+  { name: "Applications", href: "#", current: false },
+  { name: "Review", href: "#", current: false },
+  { name: "Offers", href: "#", current: false },
+  { name: "Get Help", href: "#", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -232,7 +233,6 @@ export default function Example() {
 					{/* Everything Below "Faculty Dashboard" */}
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						<div> Search bar to filter results</div>
-						<div class="max-w-2xl mx-auto"> </div>
 
 						{/* start of table */}
 
@@ -340,7 +340,7 @@ export default function Example() {
 												<td class="px-4 py-3 text-xs border">
 													<span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm">
 														{" "}
-														Acceptable{" "}
+														Nnacceptable{" "}
 													</span>
 												</td>
 												<td class="px-4 py-3 text-sm border">6/10/2020</td>
@@ -544,6 +544,7 @@ export default function Example() {
 						</section>
 
 						{/* end of table */}
+
 						{/* /End replace */}
 					</div>
 				</main>

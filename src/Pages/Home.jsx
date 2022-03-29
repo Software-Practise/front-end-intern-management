@@ -30,12 +30,17 @@ function Home() {
       </h1>
 
       <h1>
-        <a href="/FacultyApplicationView">Faculty Application View</a>
+        <a href="/FacultyApplicationView">Faculty Student Application View</a>
         {/* route to view specific student's application details */}
       </h1>
 
       <h1>
-        <a href="/FacultyApplicationList">Faculty Applications Overview (all students)</a>
+        <a href="/FacultyApplicationList">Faculty Applications (all) Overview</a>
+        {/* route to view list of all students. Clicking on a student routes to /facultyStaffApplicationView */}
+      </h1>
+
+      <h1>
+        <a href="/ThomasTest">Thomas' Responsive Table Test View</a>
         {/* route to view list of all students. Clicking on a student routes to /facultyStaffApplicationView */}
       </h1>
 
