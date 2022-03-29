@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../assets/nwlogo.png";
+import TableData from './falculty.json';
+
 
 const user = {
   name: "Tom Cook",
@@ -25,6 +27,44 @@ const userNavigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+function DynamicTable(){
+	// get table column
+	const column = Object.keys(TableData[0]);
+  
+	//get table heading data
+	const ThData =()=>{
+	  return column.map((data)=>{
+		return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
+	  })
+	}
+  
+	//get table row data
+	const tdData =() =>{
+	  return TableData.map((data)=>{
+		return(
+		  <tr>
+			{
+			  column.map((v)=>{
+				return <td className="border border-slate-700 ...">{data[v]}</td>
+			  })
+			}
+		  </tr>
+		)
+	  })
+	}
+  
+	return (
+	  <table className="border-collapse mt-3 border border-slate-500 ...">
+		<thead>
+		  <tr>{ThData()}</tr>
+		</thead>
+		<tbody>
+		  {tdData()}
+		</tbody>
+	  </table>
+	)
+  }
 
 export default function Example() {
   return (
@@ -236,6 +276,7 @@ export default function Example() {
 
 						{/* start of table */}
 
+<<<<<<< Updated upstream
 						<section class="container mx-auto p-6 font-mono">
 							<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
 								<div class="w-full overflow-x-auto">
@@ -543,6 +584,13 @@ export default function Example() {
 							</div>
 						</section>
 
+=======
+						<div className="px-4 py-6 sm:px-0">
+							<div id="table"></div>
+							<DynamicTable />
+						</div>
+						
+>>>>>>> Stashed changes
 						{/* end of table */}
 						{/* /End replace */}
 					</div>
