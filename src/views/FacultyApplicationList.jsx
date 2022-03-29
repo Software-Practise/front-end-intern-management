@@ -340,7 +340,7 @@ export default function Example() {
 												<td class="px-4 py-3 text-xs border">
 													<span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm">
 														{" "}
-														Nnacceptable{" "}
+														Acceptable{" "}
 													</span>
 												</td>
 												<td class="px-4 py-3 text-sm border">6/10/2020</td>
