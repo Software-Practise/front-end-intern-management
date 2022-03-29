@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminDashboard from "./views/AdminDashboard";
+import AdminDashboard from "./views/Admin/AdminDashboard";
 import StudentDashboard from "./views/StudentDashboard";
 import StudentApply from "./views/StudentApply";
 import StudentOffers from "./views/StudentOffers";
@@ -11,6 +11,8 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import FacultyGetHelp from "./views/FacultyGetHelp";
 import FacultyInternsList from "./views/FacultyInternsList";
+import AdminApplicationList from "./views/Admin/AdminApplicationList";
+import AdminApplicationView from "./views/Admin/AdminApplicationView";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/FacultyApplicationList" element={<FacultyApplicationList />} />
         <Route path="/FacultyGetHelp" element={<FacultyGetHelp />} />
         <Route path="/FacultyInternsList" element={<FacultyInternsList />} />
+        <Route path="/AdminApplicationView" element={<AdminApplicationView />} />
+        <Route path="/AdminApplicationList" element={<AdminApplicationList />} />
       </Routes>
     </Router>
   );

@@ -2,7 +2,9 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "../assets/nwlogo.png";
+import logo from "../../assets/nwlogo.png";
+import TableData from '.././falculty.json';
+
 
 const user = {
   name: "Tom Cook",
@@ -11,10 +13,8 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "/Faculty", current: false },
-  { name: "Applications", href: "/FacultyApplicationList", current: false },
-  { name: "My Interns", href: "/FacultyInternsList", current: false },
-  { name: "Get Help", href: "/FacultyGetHelp", current: false }
+  { name: "Dashboard", href: "/Admin", current: false },
+  { name: "Applications", href: "/AdminApplicationList", current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -26,10 +26,48 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+function DynamicTable(){
+	// get table column
+	const column = Object.keys(TableData[0]);
+  
+	//get table heading data
+	const ThData =()=>{
+	  return column.map((data)=>{
+		return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
+	  })
+	}
+  
+	//get table row data
+	const tdData =() =>{
+	  return TableData.map((data)=>{
+		return(
+		  <tr>
+			{
+			  column.map((v)=>{
+				return <td className="border border-slate-700 ...">{data[v]}</td>
+			  })
+			}
+		  </tr>
+		)
+	  })
+	}
+  
+	return (
+	  <table className="border-collapse mt-3 border border-slate-500 ...">
+		<thead>
+		  <tr>{ThData()}</tr>
+		</thead>
+		<tbody>
+		  {tdData()}
+		</tbody>
+	  </table>
+	)
+  }
+
 export default function Example() {
   return (
-    <>
-      {/*
+		<>
+			{/*
         This example requires updating your template:
 
         ```
@@ -37,18 +75,29 @@ export default function Example() {
         <body class="h-full">
         ```
       */}
-      <div className="min-h-full">
-      <Disclosure as="nav" className="bg-nwgreen">			
+			<div className="min-h-full">
+				<Disclosure as="nav" className="bg-nwgreen">
 					{({ open }) => (
 						<>
-							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ci">				{/* Padding Left and Right */}
-								<div className="flex items-center justify-between h-16">				{/* Padding inbetween Bell and Nav Buttons */}
-									
-									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
-										<div className="flex-shrink-0">				{/* Northwest Logo */}
-										  <input type="image" src={logo} className="h-12 w-12" href= "/faculty" alt="Workflow" />
+							<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ci">
+								{" "}
+								{/* Padding Left and Right */}
+								<div className="flex items-center justify-between h-16">
+									{" "}
+									{/* Padding inbetween Bell and Nav Buttons */}
+									<div className="flex items-center">
+										{" "}
+										{/* Northwest Logo and Nav Buttons */}
+										<div className="flex-shrink-0">
+											{" "}
+											{/* Northwest Logo */}
+											<a href="/">
+												<img className="h-12 w-12" src={logo} alt="Workflow" />
+											</a>
 										</div>
-										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}
+										<div className="hidden md:block">
+											{" "}
+											{/* Nav Buttons(hides when page is too thin) */}
 											<div className="ml-10 flex items-baseline space-x-4">
 												{navigation.map((item) => (
 													<a
@@ -68,18 +117,23 @@ export default function Example() {
 											</div>
 										</div>
 									</div>
-
-									<div className="hidden md:block">				{/* Profile Pic and Bell Icon(Hides when page is too thing) */}
+									<div className="hidden md:block">
+										{" "}
+										{/* Profile Pic and Bell Icon(Hides when page is too thing) */}
 										<div className="ml-4 flex items-center md:ml-6">
 											<button
 												type="button"
 												className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-											>				{/* Bell Button */}
+											>
+												{" "}
+												{/* Bell Button */}
 												<span className="sr-only">View notifications</span>
 												<BellIcon className="h-6 w-6" aria-hidden="true" />
 											</button>
 
-											<Menu as="div" className="ml-3 relative">				{/* Profile Dropdown Code */}
+											<Menu as="div" className="ml-3 relative">
+												{" "}
+												{/* Profile Dropdown Code */}
 												<div>
 													{/* Profile Button */}
 													<Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -121,7 +175,9 @@ export default function Example() {
 											</Menu>
 										</div>
 									</div>
-									<div className="-mr-2 flex md:hidden">				{/* 3 Bar Menu Button (Shows when webpage is too thin) */}
+									<div className="-mr-2 flex md:hidden">
+										{" "}
+										{/* 3 Bar Menu Button (Shows when webpage is too thin) */}
 										{/* Mobile menu button */}
 										<Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
 											<span className="sr-only">Open main menu</span>
@@ -200,56 +256,31 @@ export default function Example() {
 					)}
 				</Disclosure>
 
-        <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Faculty/Admin Application View </h1>
-          </div>
-        </header>
-        <main>        {/* Everything Below "Faculty Dashboard" */}
-          <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+				<header className="bg-gray-800 shadow">
+					{" "}
+					{/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
+					<div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+						<h1 className="text-3xl font-bold text-nwgreen">
+							Faculty/Admin Applications Overview{" "}
+						</h1>
+					</div>
+				</header>
+				<main>
+					{" "}
+					{/* Everything Below "Faculty Dashboard" */}
+					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+						<div> Search bar to filter results</div>
+						<div class="max-w-2xl mx-auto"> </div>
 
-            <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
-
-			<div className="border-8 border-double border-nwgreen rounded-md h-96">       {/* Everything inside the dashed border */}
-			    <div className="flex flex-row h-1/2">					{/* Top Row */}
-				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
-				    <div> <b> Student Information </b> </div>
-
-					<div> Name: </div> 
-					<div> Major: </div>
-					<div> Est Graduation Date:  </div>
-					<div> Credits Needed to Graduate (optional): </div>
-
-			      </div>
-			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
-			        <div> <b> Status of Application </b> </div>
-
-					<div> Status (approved/rejected): </div>
-					<div> Faculty Advisor: </div>
-					<div> Insert status graphic (green/red) </div>
-
-			      </div>
-				</div>
-				<div className="">					{/* Bottom Row */}
-				  <div className="p-1 border-t border-r border-solid basis"> 				{/* Bottom Left Box */}
-				    <div> <b> Internship Information </b> </div>
-
-					<div> Company: (name) Location: (location) </div>
-					<div> Intern Position: </div>
-					<div> Start Date: (xx/yy/zzzz) End Date: (xx/yy/zzzz) </div>
-					<div> Supervisor Name: </div>
-					<div> Supervisor Contact: </div>
-
-			      </div>
-				</div>
-				
-				
-              </div>
-            </div>
-            {/* /End replace */}
-          </div>
-        </main>
-      </div>
-    </>
-  );
+						{/* start of table */}
+						<div className="px-4 py-6 sm:px-0">
+							<div id="table"></div>
+							<DynamicTable />
+						</div>
+						{/* /End replace */}
+					</div>
+				</main>
+			</div>
+		</>
+	);
 }
