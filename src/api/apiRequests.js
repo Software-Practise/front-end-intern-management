@@ -70,8 +70,8 @@ export const getSingleStudent=(studentId)=>{
     })
 }
 
-// Returns all students under a faculty member
-export const getFacultyStudents=(facultyId)=>{
+// Returns all applications under a faculty member
+export const getFacultyApplications=(facultyId)=>{
     return axios({
         'method':'GET',
         'url':`https://intern-management-backend.herokuapp.com/api/student/faculty/${facultyId}/students`,

@@ -4,6 +4,8 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
 import TableData from '.././falculty.json';
+import { getFacultyApplications } from "../../api/apiRequests";
+import axios from "axios";
 
 
 const user = {
