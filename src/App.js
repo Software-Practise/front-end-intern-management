@@ -1,18 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// Generic Routes
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+
+// Admin Routes
 import AdminDashboard from "./views/Admin/AdminDashboard";
+import AdminApplicationList from "./views/Admin/AdminApplicationList";
+import AdminApplicationView from "./views/Admin/AdminApplicationView";
+
+// Faculty Routes
+import FacultyDashboard from "./views/FacultyDashboard";
+import FacultyApplicationView from "./views/FacultyApplicationView";
+import FacultyApplicationList from "./views/FacultyApplicationList";
+import FacultyGetHelp from "./views/FacultyGetHelp";
+import FacultyInternsList from "./views/FacultyInternsList";
+
+// Student Routes
 import StudentDashboard from "./views/StudentDashboard";
 import StudentApply from "./views/StudentApply";
 import StudentOffers from "./views/StudentOffers";
 import StudentGetHelp from "./views/StudentGetHelp";
-import FacultyDashboard from "./views/FacultyDashboard";
-import FacultyApplicationView from "./views/FacultyApplicationView";
-import FacultyApplicationList from "./views/FacultyApplicationList";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import FacultyGetHelp from "./views/FacultyGetHelp";
-import FacultyInternsList from "./views/FacultyInternsList";
-import AdminApplicationList from "./views/Admin/AdminApplicationList";
-import AdminApplicationView from "./views/Admin/AdminApplicationView";
+
+
 
 function App() {
   return (
