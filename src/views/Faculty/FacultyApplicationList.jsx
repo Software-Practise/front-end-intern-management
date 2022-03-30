@@ -30,6 +30,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+
 function DynamicTable(){
 	// get table column
 	const column = Object.keys(TableData[0]);
@@ -66,7 +67,9 @@ function DynamicTable(){
 		</tbody>
 	  </table>
 	)
-  }
+}
+
+
 
 export default function Example() {
   return (
@@ -274,7 +277,7 @@ export default function Example() {
 					{/* Everything Below "Faculty Dashboard" */}
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						<div> Search bar to filter results</div>
-						<div class="max-w-2xl mx-auto"> </div>
+						<div className="max-w-2xl mx-auto"> </div>
 
 						{/* start of table */}
 						<div className="px-4 py-6 sm:px-0">
