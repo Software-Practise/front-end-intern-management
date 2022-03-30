@@ -2,9 +2,9 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "../assets/nwlogo.png";
+import logo from "../../assets/nwlogo.png";
 import React from 'react';
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Tooltip, Legend } from 'recharts';
 
 /* User Information */
 const user = {
@@ -87,8 +87,8 @@ export default function Example() {
 									
 									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
 										<div className="flex-shrink-0">				{/* Northwest Logo */}
-											<a>
-												<img type="image" src={logo} className="h-12 w-12" href= "/faculty" alt="Workflow" />
+											<a href="/Faculty">
+												<img src={logo} className="h-12 w-12" alt="Workflow" />
 											</a>
 										</div>
 										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}

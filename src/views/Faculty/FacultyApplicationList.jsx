@@ -2,8 +2,8 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "../assets/nwlogo.png";
-import TableData from './falculty.json';
+import logo from "../../assets/nwlogo.png";
+import TableData from '.././falculty.json';
 
 
 const user = {
@@ -93,8 +93,8 @@ export default function Example() {
 										<div className="flex-shrink-0">
 											{" "}
 											{/* Northwest Logo */}
-											<a href="/">
-												<img className="h-12 w-12" src={logo} alt="Workflow" />
+											<a href="/Faculty">
+												<img src={logo} className="h-12 w-12" alt="Workflow" />
 											</a>
 										</div>
 										<div className="hidden md:block">

@@ -2,9 +2,8 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "../assets/nwlogo.png";
+import logo from "../../assets/nwlogo.png";
 import React from 'react';
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 /* User Information */
 const user = {
@@ -28,37 +27,6 @@ const userNavigation = [
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
-
-/* Interns Status Data */
-let waitApproval = 100
-let actionNeededIntern = 200
-let waitDepHead = 300
-let numApproved = 400
-
-const statusData = [
-	{name: 'Waiting for Approval', students: waitApproval, fill: 'gold'},
-	{name: 'Action needed from Intern', students: actionNeededIntern, fill: 'darkorange'},
-	{name: 'Waiting for Dep Head', students: waitDepHead, fill: 'navy'},
-	{name: 'Approved', students: numApproved, fill: 'green'}
-];
-
-/* Interns Semester Data */
-let currInterns = 100
-let prevInterns = 300
-
-const semesterData = [
-	{name: 'Current Semester', students: currInterns, fill: 'green'},
-	{name: 'Last Semester', students: prevInterns, fill: 'darkorange'}
-]
-
-/* Interns State Data */
-let inStateInterns = 400
-let outStateInterns = 150
-
-const internStateData = [
-	{name: 'In-State Interns', students: inStateInterns, fill: 'green'},
-	{name: 'Out of State Interns', students: outStateInterns, fill: 'darkorange'}
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -87,7 +55,9 @@ export default function Example() {
 									
 									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
 										<div className="flex-shrink-0">				{/* Northwest Logo */}
-											<input type="image" src={logo} className="h-12 w-12" href= "/FacultyDashboard" alt="Workflow" />
+											<a href="/Faculty">
+												<img src={logo} className="h-12 w-12" alt="Workflow" />
+											</a>
 										</div>
 										<div className="hidden md:block">				{/* Nav Buttons(hides when page is too thin) */}
 											<div className="ml-10 flex items-baseline space-x-4">

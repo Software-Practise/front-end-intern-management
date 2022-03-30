@@ -9,11 +9,11 @@ import AdminApplicationList from "./views/Admin/AdminApplicationList";
 import AdminApplicationView from "./views/Admin/AdminApplicationView";
 
 // Faculty Routes
-import FacultyDashboard from "./views/FacultyDashboard";
-import FacultyApplicationView from "./views/FacultyApplicationView";
-import FacultyApplicationList from "./views/FacultyApplicationList";
-import FacultyGetHelp from "./views/FacultyGetHelp";
-import FacultyInternsList from "./views/FacultyInternsList";
+import FacultyDashboard from "./views/Faculty/FacultyDashboard";
+import FacultyApplicationView from "./views/Faculty/FacultyApplicationView";
+import FacultyApplicationList from "./views/Faculty/FacultyApplicationList";
+import FacultyGetHelp from "./views/Faculty/FacultyGetHelp";
+import FacultyInternsList from "./views/Faculty/FacultyInternsList";
 
 // Student Routes
 import StudentDashboard from "./views/StudentDashboard";
@@ -27,21 +27,28 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Todo: Private Routing For Admin Dashboard */}
+        {/* Generic Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
+
+        {/* Admin Routes */}
+        <Route path="/AdminApplicationView" element={<AdminApplicationView />} />
+        <Route path="/AdminApplicationList" element={<AdminApplicationList />} />
+
+        {/* Faculty Routes */}
         <Route path="/Faculty" element={<FacultyDashboard />} />
-        <Route path="/studentApplications" element={<StudentDashboard />} />
-        <Route path="/studentApply" element={<StudentApply />} />
-        <Route path="/studentOffers" element={<StudentOffers />} />
-        <Route path="/studentGetHelp" element={<StudentGetHelp />} />
         <Route path="/FacultyApplicationView" element={<FacultyApplicationView />} />
         <Route path="/FacultyApplicationList" element={<FacultyApplicationList />} />
         <Route path="/FacultyGetHelp" element={<FacultyGetHelp />} />
         <Route path="/FacultyInternsList" element={<FacultyInternsList />} />
-        <Route path="/AdminApplicationView" element={<AdminApplicationView />} />
-        <Route path="/AdminApplicationList" element={<AdminApplicationList />} />
+
+        {/* Student Routes */}
+        <Route path="/studentApplications" element={<StudentDashboard />} />
+        <Route path="/studentApply" element={<StudentApply />} />
+        <Route path="/studentOffers" element={<StudentOffers />} />
+        <Route path="/studentGetHelp" element={<StudentGetHelp />} />
+        
       </Routes>
     </Router>
   );
