@@ -215,8 +215,11 @@ export default function Example() {
 									Update Student Information
 								</div>
 								<div className="mb-4">
+									<div className="text-red flex justify-center py-2 mb-4">
+										* = Required Field
+									</div>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Email:
+										Email*:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -230,53 +233,53 @@ export default function Example() {
 										name="dept"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Street Address:
+										Street Address*:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										name="street"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										City:
+										City*:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										name="city"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										State:
+										State*:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										name="state"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Zip Code:
+										Zip Code*:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										name="zipCode"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Phone Number:
+										Phone Number*:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										name="phoneNumber"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Major:
+										Major*:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										major="fname"
 									/>
 									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Level:
+										Level*:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										placeholder="Graduate/Undergraduate"
+										placeholder="This will eventually be a dropdown box"
 										major="level"
 									/>
 								</div>
