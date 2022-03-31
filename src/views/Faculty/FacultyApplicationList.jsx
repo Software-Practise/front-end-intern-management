@@ -4,7 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
 import TableData from '.././falculty.json';
-import { getFacultyApplications } from "../../api/apiRequests";
+import { makeGetRequest } from "../../api/apiRequests";
 import axios from "axios";
 
 
@@ -30,6 +30,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+function TestImport(){
+	console.log(makeGetRequest())
+	return null
+}
 
 function DynamicTable(){
 	// get table column
@@ -282,6 +286,7 @@ export default function Example() {
 						{/* start of table */}
 						<div className="px-4 py-6 sm:px-0">
 							<div id="table"></div>
+							<TestImport/>
 							<DynamicTable />
 						</div>
 						{/* /End replace */}
