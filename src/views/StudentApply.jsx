@@ -212,7 +212,7 @@ export default function Example() {
 							<form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-40">
 								<div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
 									{""}
-									Internship Application
+									Update Student Information
 								</div>
 								<div className="mb-4">
 									<label className="block text-gray-700 text-sm font-normal mb-2">
