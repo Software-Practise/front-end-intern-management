@@ -22,6 +22,43 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
+var submitData = {
+	applicationData: {
+		"nwId": "",
+		"status": "STARTED",
+		"offerLetter": "",
+		"faculty_id": "",
+		"startDate": 0,
+		"endDate": 0,
+		"term": "",
+		"year": 0,
+		"crn": 0,
+		"section": 0,
+		"creditHour": 0,
+		"courseTitle": "",
+		"paid": true,
+		"unpaid": false,
+		"empId": ""
+	},
+	employerData: {
+		"fName": "",
+		"lName": "",
+		"employerId": "",
+		"street": "",
+		"city": "",
+		"state": "",
+		"zipCode": "",
+		"phoneNumber": 0,
+		"email": "",
+		"companyName": ""
+	}
+}
+
+function updateData(){
+	submitData.applicationData.nwId = document.getElementById("userLabel").value;
+	console.log(submitData.applicationData.nwId)
+}
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -207,84 +244,183 @@ export default function Example() {
 					</div>
 				</header>
 				<main>
-					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+					<div className="max-w-7xl mx-auto py-1 sm:px-6 lg:px-8">
 						<div className="px-4 py-6 sm:px-0">
 							<form className="bg-white shadow-lg rounded px-12 pt-6 pb-8 mb-40">
 								<div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
 									{""}
-									Update Student Information
+									Internship Details
 								</div>
-								<div className="mb-4">
-									<div className="text-red flex justify-center py-2 mb-4">
-										* = Required Field
-									</div>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Email*:
+								<div className="mb-2">				{/* Application Inputs */}
+									<label id= "userLabel" className="block text-gray-700 text-sm font-normal">
+										Username:
 									</label>
 									<input 
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										name="email"
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Username"
+										name="user"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Department:
+									<label id= "offerLabel" className="block text-gray-700 text-sm font-normal">
+										Offer Letter:
 									</label>
 									<input
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										name="dept"
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Offer Letter"
+										name="offer"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Street Address*:
+									<label id= "startLabel" className="block text-gray-700 text-sm font-normal">
+										Start Date:
 									</label>
 									<input 
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="MMDDYY"
+										name="start"
+									/>
+									<label id= "endLabel" className="block text-gray-700 text-sm font-normal">
+										End Date:
+									</label>
+									<input
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="MMDDYY"
+										name="end"
+									/>
+									<label id= "termLabel" className="block text-gray-700 text-sm font-normal">
+										Term:
+									</label>
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Spring or Fall"
+										name="term"
+									/>
+									<label id= "yearLabel" className="block text-gray-700 text-sm font-normal">
+										Year:
+									</label>
+									<input
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="YYYY"
+										name="year"
+									/>
+									<label id= "crnLabel" className="block text-gray-700 text-sm font-normal">
+										CRN: 
+									</label>
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="CRN"
+										name="crn"
+									/>
+									<label id= "sectionLabel" className="block text-gray-700 text-sm font-normal">
+										Section: 
+									</label>
+									<input
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Section"
+										major="section"
+									/>
+									<label id= "creditLabel" className="block text-gray-700 text-sm font-normal">
+										Credit Hours: 
+									</label>
+									<input
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Credit Hours"
+										major="credit"
+									/>
+									<label id= "courseLabel" className="block text-gray-700 text-sm font-normal">
+										Course Title:
+									</label>
+									<input
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Course Title"
+										major="course"
+									/>
+									<label id= "paidLabel" className="block text-gray-700 text-sm font-normal">
+										Paid or Unpaid: 
+									</label>
+									<input
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="This will be a dropdown box"
+										major="paid"
+									/>
+								</div>
+								<div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
+									{""}
+									Employer Details
+								</div>
+								<div className="mb-2">
+									<label id= "firstLabel" className="block text-gray-700 text-sm font-normal">
+										Employer First Name:
+									</label>
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="First Name"
+										name="first"
+									/>
+									<label id= "lastLabel" className="block text-gray-700 text-sm font-normal">
+										Employer Last Name:
+									</label>
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Last Name"
+										name="last"
+									/>
+									<label id= "companyLabel" className="block text-gray-700 text-sm font-normal">
+										Company Name:
+									</label>
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Company Name"
+										name="company"
+									/>
+									<label id= "streetLabel" className="block text-gray-700 text-sm font-normal">
+										Street:
+									</label>
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Street"
 										name="street"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										City*:
+									<label id= "cityLabel" className="block text-gray-700 text-sm font-normal">
+										City:
 									</label>
-									<input
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="City"
 										name="city"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										State*:
+									<label id= "stateLabel" className="block text-gray-700 text-sm font-normal">
+										State:
 									</label>
 									<input 
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="State"
 										name="state"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Zip Code*:
-									</label>
-									<input
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										name="zipCode"
-									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Phone Number*:
+									<label id= "zipLabel" className="block text-gray-700 text-sm font-normal">
+										Zip Code:
 									</label>
 									<input 
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										name="phoneNumber"
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Zip Code"
+										name="zip"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Major*:
+									<label id= "phoneLabel" className="block text-gray-700 text-sm font-normal">
+										Phone Number:
 									</label>
-									<input
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										major="fname"
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Phone Number"
+										name="phone"
 									/>
-									<label className="block text-gray-700 text-sm font-normal mb-2">
-										Level*:
+									<label id= "emailLabel" className="block text-gray-700 text-sm font-normal">
+										Email Address:
 									</label>
-									<input
-										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										placeholder="This will eventually be a dropdown box"
-										major="level"
+									<input 
+										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+										placeholder="Email Address"
+										name="email"
 									/>
 								</div>
 								<div className="flex justify-center items-center">
-									<button className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen">
+									<button className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen" onClick={updateData}>
 										Submit
 									</button>
 								</div>
