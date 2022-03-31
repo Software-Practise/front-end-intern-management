@@ -84,11 +84,12 @@ export async function makeGetRequest() {
 }
 
 // Add application data to student
-export const postStudentApplication=(studentId)=>{
+export const postStudentApplication=(studentId, authRequest)=>{
     return axios({
         'method':'POST',
         'url':`https://intern-management-backend.herokuapp.com/api/student/students/${studentId}/addApplication`,
         //'url':`http://localhost:7070/api/student/students`,
+        'data':authRequest,
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }
