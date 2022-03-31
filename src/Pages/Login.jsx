@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getSingleStudent, userLogin } from "../api/apiRequests";
+import { userLogin } from "../api/apiRequests";
 
 function Login() {
 	const [values, setValues] = useState({

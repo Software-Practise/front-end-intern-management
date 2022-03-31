@@ -4,7 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
 import TableData from '.././falculty.json';
-import { makeGetRequest } from "../../api/apiRequests";
+import { getFacultyApplications } from "../../api/apiRequests";
 import axios from "axios";
 
 
@@ -30,8 +30,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+
+
 function TestImport(){
-	console.log(makeGetRequest())
+	getFacultyApplications()
 	return null
 }
 
@@ -76,6 +78,15 @@ function DynamicTable(){
 
 
 export default function Example() {
+
+	// makeGetRequest().then((response) => {
+	// 	if(response.status === 200){
+	// 		console.log(response.data)
+	// 	}
+	// }).catch(err => {
+	// 	console.log("error")
+	// })
+
   return (
 		<>
 			{/*
