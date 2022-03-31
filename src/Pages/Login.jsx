@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { userLogin } from "../api/apiRequests";
+import { getSingleStudent, userLogin } from "../api/apiRequests";
 
 function Login() {
 	const [values, setValues] = useState({
@@ -21,26 +21,30 @@ function Login() {
 	let navigate = useNavigate();
 	const handleSubmit = () => {
 		console.log(JSON.stringify(values));
-		try {
-			userLogin(JSON.stringify(values)).then((response) => {
-				if (response.status === 200) {
-					console.log("response", response);
-					setUser(response.data.access_token);
+		// navigate("/admin");
+		var isError = false;
 
-					// Store User in local storage
-					localStorage.setItem("user", response.data.access_token);
-					localStorage.setItem("userAccess", response.data.access_token);
-					localStorage.setItem("userRefresh", response.data.refresh_token);
-					console.log("Response Data", response.data);
-					//navigate("/");
-				}
-			});
-		} catch (error) {
-			console.log("ERROR", error.message);
+		userLogin(JSON.stringify(values)).then((response) => {
+			if (response.status === 200) {
+				console.log("response", response);
+				setUser(response.data.access_token);
+
+				// Store User in local storage
+				localStorage.setItem("userId", values.nwId);
+				localStorage.setItem("userAccess", response.data.access_token);
+				localStorage.setItem("userRefresh", response.data.refresh_token);
+				console.log("Response Data", response.data);
+			}
+		}).catch(err => {
+			console.log("ERROR", err.message);
 			window.alert("Invalid Login");
+			isError = true;
+		});
+
+		if(!isError){
+			navigate("/admin");
 		}
 
-		//navigate("/");
 	};
 
 	const handleChange = (e) => {
@@ -50,9 +54,9 @@ function Login() {
 		}));
 	};
 
-	if (user) {
-		return <div>{navigate("/")}</div>;
-	}
+	// if (user) {
+	// 	return <div>{navigate("/")}</div>;
+	// }
 
 	return (
 		<div className="flex bg-nwgreen items-center justify-center p-12">
