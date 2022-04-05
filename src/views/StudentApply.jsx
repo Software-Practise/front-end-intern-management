@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../assets/nwlogo.png";
+import { postStudentApplication } from "../api/apiRequests"
 
 const user = {
   name: "Tom Cook",
@@ -24,9 +25,7 @@ const userNavigation = [
 ];
 
 var submitData = {
-	applicationData: {
-		"nwId": "",
-		"status": "STARTED",
+	application: {
 		"offerLetter": "",
 		"faculty_id": "",
 		"startDate": 0,
@@ -37,10 +36,10 @@ var submitData = {
 		"section": 0,
 		"creditHour": 0,
 		"courseTitle": "",
-		"paid": true,
-		"empId": ""
+		"paid": false,
+		"unpaid": false
 	},
-	employerData: {
+	employer: {
 		"fName": "",
 		"lName": "",
 		"employerId": "",
@@ -54,36 +53,69 @@ var submitData = {
 	}
 }
 
+function submitApplication(exportData){
+	console.log(exportData);
+	var isError = false;
+	var userId = localStorage.getItem("userId");
+
+	postStudentApplication(userId,exportData).then((response) => {
+		if(response.status === 200){
+			console.log("response", response);
+			var isError = false;
+		}
+		else{
+			console.log("response", response)
+			isError = true;
+		}
+	}).catch(err => {
+		console.log("ERROR", err.message);
+		isError = true;
+	});
+	return isError;
+}
+
 function updateData(){				{/* Function to update object to return */}
 	// Application Data
-	submitData.applicationData.nwId = document.getElementById("userLabel").value;
-	submitData.applicationData.offerLetter = document.getElementById("offerLabel").value;
-	submitData.applicationData.startDate = document.getElementById("startLabel").value;
-	submitData.applicationData.endDate = document.getElementById("endLabel").value;
-	submitData.applicationData.term = document.getElementById("termLabel").value;
-	submitData.applicationData.year = document.getElementById("yearLabel").value;
-	submitData.applicationData.crn = document.getElementById("crnLabel").value;
-	submitData.applicationData.section = document.getElementById("sectionLabel").value;
-	submitData.applicationData.creditHour = document.getElementById("creditLabel").value;
-	submitData.applicationData.courseTitle = document.getElementById("courseLabel").value;
+	submitData.application.faculty_id = document.getElementById("facUserLabel").value;
+	submitData.application.offerLetter = document.getElementById("offerLabel").value;
+	submitData.application.startDate = document.getElementById("startLabel").value;
+	submitData.application.endDate = document.getElementById("endLabel").value;
+	submitData.application.term = document.getElementById("termLabel").value;
+	submitData.application.year = document.getElementById("yearLabel").value;
+	submitData.application.crn = document.getElementById("crnLabel").value;
+	submitData.application.section = document.getElementById("sectionLabel").value;
+	submitData.application.creditHour = document.getElementById("creditLabel").value;
+	submitData.application.courseTitle = document.getElementById("courseLabel").value;
 
 	if(document.getElementById("paidLabel").value.toLowerCase() === "paid"){
-		submitData.applicationData.paid = true
+		submitData.application.paid = true
 	}
 	else if(document.getElementById("paidLabel").value.toLowerCase() === "unpaid"){
-		submitData.applicationData.paid = false
+		submitData.application.paid = false
 	}
 
 	// Employer Data
-	submitData.employerData.fName = document.getElementById("firstLabel").value;
-	submitData.employerData.lName = document.getElementById("lastLabel").value;	
-	submitData.employerData.street = document.getElementById("streetLabel").value;
-	submitData.employerData.city = document.getElementById("cityLabel").value;
-	submitData.employerData.state = document.getElementById("stateLabel").value;
-	submitData.employerData.zipCode = document.getElementById("zipLabel").value;
-	submitData.employerData.phoneNumber = document.getElementById("phoneLabel").value;
-	submitData.employerData.email = document.getElementById("emailLabel").value;
-	submitData.employerData.companyName = document.getElementById("companyLabel").value;
+	submitData.employer.fName = document.getElementById("firstLabel").value;
+	submitData.employer.lName = document.getElementById("lastLabel").value;	
+	submitData.employer.street = document.getElementById("streetLabel").value;
+	submitData.employer.city = document.getElementById("cityLabel").value;
+	submitData.employer.state = document.getElementById("stateLabel").value;
+	submitData.employer.zipCode = document.getElementById("zipLabel").value;
+	submitData.employer.phoneNumber = document.getElementById("phoneLabel").value;
+	submitData.employer.email = document.getElementById("emailLabel").value;
+	submitData.employer.companyName = document.getElementById("companyLabel").value;
+
+	var submitStatus = submitApplication(submitData);
+	// Show message
+	if(submitStatus === true){			{/* If there was an error */}
+		document.getElementById("failLabel").classList.remove('invisible')
+		document.getElementById("failLabel").classList.add('visible')
+	}
+	else if(submitStatus === false){	{/* If there was no error */}
+		document.getElementById("successLabel").classList.remove('invisible')
+		document.getElementById("successLabel").classList.add('visible')
+	}
+	
 	console.log(submitData)
 }
 
@@ -281,13 +313,13 @@ export default function Example() {
 								</div>
 								<div className="mb-2">				{/* Application Inputs */}
 									<label className="block text-gray-700 text-sm font-normal">
-										Username:
+										Faculty Username:
 									</label>
-									<input 
+									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										placeholder="Username"
-										name="user"
-										id="userLabel"
+										placeholder="Faculty Username"
+										name="faculty"
+										id= "facUserLabel"
 									/>
 
 									<label className="block text-gray-700 text-sm font-normal">
@@ -490,10 +522,11 @@ export default function Example() {
 										Submit
 									</button>
 								</div>
-								
+								<div id="failLabel"  className="text-brightred invisible">Application did not submit successfully!</div>
+								<div id="successLabel" className="text-green invisible">Application submitted successfully!</div>
 							</form>
 						</div>
-						{/* /End replace */}
+						{/* End replace */}
 					</div>
 				</main>
 			</div>
