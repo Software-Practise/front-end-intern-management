@@ -35,10 +35,12 @@ function TestImport(){
 	return null
 }
 
-function importAllApplications(){
-	axiosReturn = getAllApplications()
-}
-resultTest = importAllApplications()
+// function importAllApplications(){
+// 	axiosReturn = getAllApplications()
+// 	console.log(axiosReturn)
+// 	return axiosReturn
+// }
+// resultTest = importAllApplications()
 
 function DynamicTable(){
 	// get table column
