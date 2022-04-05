@@ -37,7 +37,6 @@ var submitData = {
 		"creditHour": 0,
 		"courseTitle": "",
 		"paid": true,
-		"unpaid": false,
 		"empId": ""
 	},
 	employerData: {
@@ -54,9 +53,37 @@ var submitData = {
 	}
 }
 
-function updateData(){
+function updateData(){				{/* Function to update object to return */}
+	// Application Data
 	submitData.applicationData.nwId = document.getElementById("userLabel").value;
-	console.log(submitData.applicationData.nwId)
+	submitData.applicationData.offerLetter = document.getElementById("offerLabel").value;
+	submitData.applicationData.startDate = document.getElementById("startLabel").value;
+	submitData.applicationData.endDate = document.getElementById("endLabel").value;
+	submitData.applicationData.term = document.getElementById("termLabel").value;
+	submitData.applicationData.year = document.getElementById("yearLabel").value;
+	submitData.applicationData.crn = document.getElementById("crnLabel").value;
+	submitData.applicationData.section = document.getElementById("sectionLabel").value;
+	submitData.applicationData.creditHour = document.getElementById("creditLabel").value;
+	submitData.applicationData.courseTitle = document.getElementById("courseLabel").value;
+
+	if(document.getElementById("paidLabel").value.toLowerCase() === "paid"){
+		submitData.applicationData.paid = true
+	}
+	else if(document.getElementById("paidLabel").value.toLowerCase() === "unpaid"){
+		submitData.applicationData.paid = false
+	}
+
+	// Employer Data
+	submitData.employerData.fName = document.getElementById("firstLabel").value;
+	submitData.employerData.lName = document.getElementById("lastLabel").value;	
+	submitData.employerData.street = document.getElementById("streetLabel").value;
+	submitData.employerData.city = document.getElementById("cityLabel").value;
+	submitData.employerData.state = document.getElementById("stateLabel").value;
+	submitData.employerData.zipCode = document.getElementById("zipLabel").value;
+	submitData.employerData.phoneNumber = document.getElementById("phoneLabel").value;
+	submitData.employerData.email = document.getElementById("emailLabel").value;
+	submitData.employerData.companyName = document.getElementById("companyLabel").value;
+	console.log(submitData)
 }
 
 function classNames(...classes) {
@@ -252,175 +279,195 @@ export default function Example() {
 									Internship Details
 								</div>
 								<div className="mb-2">				{/* Application Inputs */}
-									<label id= "userLabel" className="block text-gray-700 text-sm font-normal">
+									<label className="block text-gray-700 text-sm font-normal">
 										Username:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Username"
 										name="user"
+										id="userLabel"
 									/>
-									<label id= "offerLabel" className="block text-gray-700 text-sm font-normal">
+									<label className="block text-gray-700 text-sm font-normal">
 										Offer Letter:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Offer Letter"
 										name="offer"
+										id= "offerLabel"
 									/>
-									<label id= "startLabel" className="block text-gray-700 text-sm font-normal">
+									<label className="block text-gray-700 text-sm font-normal">
 										Start Date:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="MMDDYY"
 										name="start"
+										id= "startLabel"
 									/>
-									<label id= "endLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										End Date:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="MMDDYY"
 										name="end"
+										id= "endLabel"
 									/>
-									<label id= "termLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Term:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Spring or Fall"
 										name="term"
+										id= "termLabel"
 									/>
-									<label id= "yearLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Year:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="YYYY"
 										name="year"
+										id= "yearLabel"
 									/>
-									<label id= "crnLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										CRN: 
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="CRN"
 										name="crn"
+										id= "crnLabel"
 									/>
-									<label id= "sectionLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Section: 
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Section"
 										major="section"
+										id= "sectionLabel"
 									/>
-									<label id= "creditLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Credit Hours: 
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Credit Hours"
 										major="credit"
+										id= "creditLabel"
 									/>
-									<label id= "courseLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Course Title:
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Course Title"
 										major="course"
+										id= "courseLabel"
 									/>
-									<label id= "paidLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Paid or Unpaid: 
 									</label>
 									<input
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="This will be a dropdown box"
 										major="paid"
+										id= "paidLabel"
 									/>
 								</div>
 								<div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
 									{""}
 									Employer Details
 								</div>
-								<div className="mb-2">
-									<label id= "firstLabel" className="block text-gray-700 text-sm font-normal">
+								<div className="mb-2">				{/* Employer Inputs */}
+									<label  className="block text-gray-700 text-sm font-normal">
 										Employer First Name:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="First Name"
 										name="first"
+										id= "firstLabel"
 									/>
-									<label id= "lastLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Employer Last Name:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Last Name"
 										name="last"
+										id= "lastLabel"
 									/>
-									<label id= "companyLabel" className="block text-gray-700 text-sm font-normal">
+									<label className="block text-gray-700 text-sm font-normal">
 										Company Name:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Company Name"
 										name="company"
+										id= "companyLabel"
 									/>
-									<label id= "streetLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Street:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Street"
 										name="street"
+										id= "streetLabel"
 									/>
-									<label id= "cityLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										City:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="City"
 										name="city"
+										id= "cityLabel"
 									/>
-									<label id= "stateLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										State:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="State"
 										name="state"
+										id= "stateLabel"
 									/>
-									<label id= "zipLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Zip Code:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Zip Code"
 										name="zip"
+										id= "zipLabel"
 									/>
-									<label id= "phoneLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Phone Number:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Phone Number"
 										name="phone"
+										id= "phoneLabel"
 									/>
-									<label id= "emailLabel" className="block text-gray-700 text-sm font-normal">
+									<label  className="block text-gray-700 text-sm font-normal">
 										Email Address:
 									</label>
 									<input 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="Email Address"
 										name="email"
+										id= "emailLabel"
 									/>
 								</div>
 								<div className="flex justify-center items-center">
-									<button className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen" onClick={updateData}>
+									<button type="button" className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen" onClick={updateData}>
 										Submit
 									</button>
 								</div>
