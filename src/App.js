@@ -7,6 +7,8 @@ import Login from "./Pages/Login";
 import AdminDashboard from "./views/Admin/AdminDashboard";
 import AdminApplicationList from "./views/Admin/AdminApplicationList";
 import AdminApplicationView from "./views/Admin/AdminApplicationView";
+import StudentList from "./views/Admin/StudentList";
+
 
 // Faculty Routes
 import FacultyDashboard from "./views/Faculty/FacultyDashboard";
@@ -35,6 +37,7 @@ function App() {
         {/* Admin Routes */}
         <Route path="/AdminApplicationView" element={<AdminApplicationView />} />
         <Route path="/AdminApplicationList" element={<AdminApplicationList />} />
+        <Route path="/StudentList" element={<StudentList />} />
 
         {/* Faculty Routes */}
         <Route path="/Faculty" element={<FacultyDashboard />} />
