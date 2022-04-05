@@ -15,6 +15,7 @@ const user = {
 const navigation = [
   { name: "Dashboard", href: "/Admin", current: false },
   { name: "Applications", href: "/AdminApplicationList", current: false },
+  { name: "Dev Link Page", href: "/", current: true},
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },

@@ -6,7 +6,7 @@ import logo from "../../assets/nwlogo.png";
 import TableData from '.././falculty.json';
 import { getFacultyApplications } from "../../api/apiRequests";
 import axios from "axios";
-
+import { getAllApplications } from "../../api/apiRequests";
 
 const user = {
   name: "Tom Cook",
@@ -30,12 +30,15 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-
-
 function TestImport(){
 	getFacultyApplications()
 	return null
 }
+
+function importAllApplications(){
+	axiosReturn = getAllApplications()
+}
+resultTest = importAllApplications()
 
 function DynamicTable(){
 	// get table column
@@ -74,8 +77,6 @@ function DynamicTable(){
 	  </table>
 	)
 }
-
-
 
 export default function Example() {
 

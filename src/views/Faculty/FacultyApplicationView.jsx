@@ -245,9 +245,20 @@ export default function Example() {
 			      </div>
 				</div>
 				
-				
               </div>
+
             </div>
+			<button className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen">
+				Approve Application
+				{/*Functionality needed: change "status" field of application to approved */}
+				{/*Functionality needed}
+				{/*Functionality needed: send email to student notifying them of status change */}
+			</button>
+			<button className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen">
+				Reject Application
+				{/*Functionality needed: change "status" field of application to approved */}
+				{/*Functionality needed: send email to student notifying them of status change */}
+			</button>
             {/* /End replace */}
           </div>
         </main>
