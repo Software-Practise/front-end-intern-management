@@ -288,6 +288,7 @@ export default function Example() {
 										name="user"
 										id="userLabel"
 									/>
+
 									<label className="block text-gray-700 text-sm font-normal">
 										Offer Letter:
 									</label>
@@ -297,6 +298,7 @@ export default function Example() {
 										name="offer"
 										id= "offerLabel"
 									/>
+
 									<label className="block text-gray-700 text-sm font-normal">
 										Start Date:
 									</label>
@@ -306,6 +308,7 @@ export default function Example() {
 										name="start"
 										id= "startLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										End Date:
 									</label>
@@ -315,15 +318,21 @@ export default function Example() {
 										name="end"
 										id= "endLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										Term:
 									</label>
-									<input 
+									<select 
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-										placeholder="Spring or Fall"
+										placeholder="Spring, Fall or Summer"
 										name="term"
 										id= "termLabel"
-									/>
+									>
+										<option value="Fall">Fall</option>
+										<option value="Spring">Spring</option>
+										<option value="Summer">Summer</option>
+									</select>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										Year:
 									</label>
@@ -333,6 +342,7 @@ export default function Example() {
 										name="year"
 										id= "yearLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										CRN: 
 									</label>
@@ -342,6 +352,7 @@ export default function Example() {
 										name="crn"
 										id= "crnLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										Section: 
 									</label>
@@ -351,6 +362,7 @@ export default function Example() {
 										major="section"
 										id= "sectionLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										Credit Hours: 
 									</label>
@@ -360,6 +372,7 @@ export default function Example() {
 										major="credit"
 										id= "creditLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										Course Title:
 									</label>
@@ -369,15 +382,20 @@ export default function Example() {
 										major="course"
 										id= "courseLabel"
 									/>
+
 									<label  className="block text-gray-700 text-sm font-normal">
 										Paid or Unpaid: 
 									</label>
-									<input
+									<select
 										className="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 										placeholder="This will be a dropdown box"
 										major="paid"
 										id= "paidLabel"
-									/>
+									>
+										<option value="paid">Paid</option>
+										<option value="unpaid">Unpaid</option>
+									</select>
+
 								</div>
 								<div className="text-nwgreen text-2xl flex justify-center border-b-2 py-2 mb-4">
 									{""}
