@@ -19,7 +19,8 @@ const navigation = [
   { name: "Dashboard", href: "/Faculty", current: false },
   { name: "Applications", href: "/FacultyApplicationList", current: false },
   { name: "My Interns", href: "/FacultyInternsList", current: false },
-  { name: "Get Help", href: "/FacultyGetHelp", current: false }
+  { name: "Get Help", href: "/FacultyGetHelp", current: false },
+  { name: "Dev Link Page", href: "/", current: true}
 ];
 
 /* User Buttons */

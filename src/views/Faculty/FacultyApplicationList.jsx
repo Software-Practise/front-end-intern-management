@@ -31,16 +31,14 @@ function classNames(...classes) {
 }
 
 function TestImport(){
-	getFacultyApplications()
-	return null
+	var facultyId = localStorage.getItem("userId");
+	var axiosReturn = getFacultyApplications(facultyId)
+	//console.log(axiosReturn)
+	return axiosReturn
 }
-
-// function importAllApplications(){
-// 	axiosReturn = getAllApplications()
-// 	console.log(axiosReturn)
-// 	return axiosReturn
-// }
-// resultTest = importAllApplications()
+var axiosReturnVal = TestImport()
+console.log(axiosReturnVal)
+// note: troubleshoot console output, seems like backend pull issue
 
 function DynamicTable(){
 	// get table column

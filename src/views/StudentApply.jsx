@@ -15,6 +15,7 @@ const navigation = [
   { name: "Apply Now", href: "/studentApply", current: true },
   { name: "Offers", href: "/studentOffers", current: false },
   { name: "Get Help", href: "/studentGetHelp", current: false },
+  { name: "Dev Link Page", href: "/", current: true}
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
