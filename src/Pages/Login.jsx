@@ -33,6 +33,7 @@ function Login() {
 				localStorage.setItem("userId", values.nwId);
 				localStorage.setItem("userAccess", response.data.access_token);
 				localStorage.setItem("userRefresh", response.data.refresh_token);
+				//localStorage.setItem("userRole", response.data.)
 				console.log("Response Data", response.data);
 			}
 		}).catch(err => {
