@@ -91,11 +91,10 @@ export const postStudentApplication=(studentId, authRequest)=>{
         'method':'POST',
         'url':`https://intern-management-backend.herokuapp.com/api/student/students/${studentId}/addApplication`,
         //'url':`http://localhost:7070/api/student/students`,
-        'data':{},
+        'data':authRequest,
         headers:{
             'Accept': 'application/json',
             'Content-Type' : 'application/json',
-            'Transfer-Encoding' : 'chunked',
             'Authorization':'Bearer '+getAccessToken()
         }
     })
