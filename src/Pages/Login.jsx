@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { userLogin } from "../api/apiRequests";
 
+function clearStorage(){
+	localStorage.clear();
+}
+
+window.onload = clearStorage();
+
 function Login() {
 	const [values, setValues] = useState({
 		nwId: "",
@@ -33,19 +39,29 @@ function Login() {
 				localStorage.setItem("userId", values.nwId);
 				localStorage.setItem("userAccess", response.data.access_token);
 				localStorage.setItem("userRefresh", response.data.refresh_token);
-				//localStorage.setItem("userRole", response.data.)
+				localStorage.setItem("userRole", response.data.role);
 				console.log("Response Data", response.data);
+
+				var role = localStorage.getItem("userRole");
+				if(role === "ROLE_FACULTY"){
+					navigate("/Faculty");
+				}
+				else if(role === "ROLE_ADMIN"){
+					navigate("/admin")
+				}
+				else if(role === "ROLE_USER"){
+					navigate("/studentApplications")
+				}
+				else{
+					navigate("/login")
+				}
 			}
 		}).catch(err => {
 			console.log("ERROR", err.message);
 			window.alert("Invalid Login");
 			isError = true;
 		});
-
-		if(!isError){
-			navigate("/admin");
-		}
-
+		console.log(localStorage.getItem("userRole"));
 	};
 
 	const handleChange = (e) => {
@@ -54,6 +70,21 @@ function Login() {
 			[e.target.name]: e.target.value,
 		}));
 	};
+
+	const handleRedirect = (role) => {
+		if(role === "ROLE_FACULTY"){
+			navigate("/Faculty");
+		}
+		else if(role === "ROLE_ADMIN"){
+			navigate("/admin")
+		}
+		else if(role === "ROLE_USER"){
+			navigate("/studentApplications")
+		}
+		else{
+			navigate("/login")
+		}
+	}
 
 	// if (user) {
 	// 	return <div>{navigate("/")}</div>;
@@ -109,6 +140,7 @@ function Login() {
 						{" "}
 						{/* Sign In Button Block */}
 						<button
+							type="button"
 							className="px-4 text- py-2 rounded text-white inline-block shadow-lg bg-nwgreen "
 							onClick={handleSubmit}
 						>
