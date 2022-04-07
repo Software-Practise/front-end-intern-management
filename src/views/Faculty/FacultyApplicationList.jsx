@@ -36,16 +36,23 @@ function TestImport(){
 		if(response.status === 200){
 			console.log("response", response);
 			console.log("data", response.data);
+			console.log("json data", JSON.stringify(response.data));
+			localStorage.setItem("allApplications", response.data);
 		}
 	}).catch(err => {
 		console.log("Error", err.message);
 	})
-	return null
+	return null;
 }
 
 function DynamicTable(){
+
 	// get table column
-	const column = Object.keys(TableData[0]);
+	var tableArray = localStorage.getItem('allApplications');
+	console.log("Array",tableArray)
+	var testObj = tableArray[0];
+	console.log("obj", testObj);
+	const column = Object.keys(testObj);
   
 	//get table heading data
 	const ThData =()=>{
