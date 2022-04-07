@@ -34,25 +34,19 @@ function TestImport(){
 	var facultyId = localStorage.getItem("userId");
 	getFacultyApplications(facultyId).then((response) => {
 		if(response.status === 200){
-			console.log("response", response);
 			console.log("data", response.data);
-			console.log("json data", JSON.stringify(response.data));
-			localStorage.setItem("allApplications", response.data);
+			localStorage.setItem("allApplications", JSON.stringify(response.data));
 		}
 	}).catch(err => {
 		console.log("Error", err.message);
 	})
+	var testArray = JSON.parse(localStorage.getItem("allApplications"));
+	console.log("testArray", testArray[0].nwId)
 	return null;
 }
 
 function DynamicTable(){
-
-	// get table column
-	var tableArray = localStorage.getItem('allApplications');
-	console.log("Array",tableArray)
-	var testObj = tableArray[0];
-	console.log("obj", testObj);
-	const column = Object.keys(testObj);
+	const column = Object.keys(TableData[0]);
   
 	//get table heading data
 	const ThData =()=>{
