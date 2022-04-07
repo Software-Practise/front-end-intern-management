@@ -14,8 +14,7 @@ const navigation = [
   { name: "Dashboard", href: "/Faculty", current: false },
   { name: "Applications", href: "/FacultyApplicationList", current: false },
   { name: "My Interns", href: "/FacultyInternsList", current: false },
-  { name: "Get Help", href: "/FacultyGetHelp", current: false },
-  { name: "Dev Link Page", href: "/", current: true}
+  { name: "Get Help", href: "/FacultyGetHelp", current: false }
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -47,7 +46,7 @@ export default function Example() {
 									
 									<div className="flex items-center">				{/* Northwest Logo and Nav Buttons */}
 										<div className="flex-shrink-0">				{/* Northwest Logo */}
-											<a href="/Faculty">
+											<a href="/">
 												<img src={logo} className="h-12 w-12" alt="Workflow" />
 											</a>
 										</div>

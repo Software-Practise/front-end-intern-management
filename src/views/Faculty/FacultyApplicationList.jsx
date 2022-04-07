@@ -33,19 +33,9 @@ function classNames(...classes) {
 function TestImport(){
 	var facultyId = localStorage.getItem("userId");
 	var axiosData = getFacultyApplications(facultyId)
-	return axiosData
+	console.log(axiosData)
+	return null
 }
-var appListData = TestImport()
-console.log(appListData)
-
-
-//populate table
-function TestDynamicTable(){
-	return appListData[0]
-}
-
-// var test = TestDynamicTable()
-// console.log(test)
 
 function DynamicTable(){
 	// get table column
@@ -86,15 +76,6 @@ function DynamicTable(){
 }
 
 export default function Example() {
-
-	// makeGetRequest().then((response) => {
-	// 	if(response.status === 200){
-	// 		console.log(response.data)
-	// 	}
-	// }).catch(err => {
-	// 	console.log("error")
-	// })
-
   return (
 		<>
 			{/*
@@ -121,7 +102,7 @@ export default function Example() {
 										<div className="flex-shrink-0">
 											{" "}
 											{/* Northwest Logo */}
-											<a href="/Faculty">
+											<a href="/">
 												<img src={logo} className="h-12 w-12" alt="Workflow" />
 											</a>
 										</div>
