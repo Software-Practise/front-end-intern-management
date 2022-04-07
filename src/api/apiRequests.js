@@ -72,13 +72,15 @@ export const getSingleStudent=(studentId)=>{
 }
 
 // Returns all applications under a faculty member
-export const getFacultyApplications = async () => {
-    let res = await axios.get(`https://intern-management-backend.herokuapp.com/api/student/faculty/cavillh/students`,{
+export const getFacultyApplications = async (facultyId) => {
+    let res = await axios.get(`https://intern-management-backend.herokuapp.com/api/student/faculty/${facultyId}/students`,{
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }
-    }).then((res) => {
-        console.log(res)
+    })
+    .then((res) => {
+        console.log(res.data)
+        return res.data
     }).catch((error) => {
         console.error(error)
     })

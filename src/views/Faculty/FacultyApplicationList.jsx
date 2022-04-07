@@ -6,7 +6,6 @@ import logo from "../../assets/nwlogo.png";
 import TableData from '.././falculty.json';
 import { getFacultyApplications } from "../../api/apiRequests";
 import axios from "axios";
-import { getAllApplications } from "../../api/apiRequests";
 
 const user = {
   name: "Tom Cook",
@@ -30,15 +29,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+// import data
 function TestImport(){
 	var facultyId = localStorage.getItem("userId");
-	var axiosReturn = getFacultyApplications(facultyId)
-	//console.log(axiosReturn)
-	return axiosReturn
+	var axiosData = getFacultyApplications(facultyId)
+	return axiosData
 }
-var axiosReturnVal = TestImport()
-console.log(axiosReturnVal)
-// note: troubleshoot console output, seems like backend pull issue
+var appListData = TestImport()
+console.log(appListData)
+
+
+//populate table
+function TestDynamicTable(){
+	return appListData[0]
+}
+
+// var test = TestDynamicTable()
+// console.log(test)
 
 function DynamicTable(){
 	// get table column
@@ -299,7 +306,7 @@ export default function Example() {
 						<div className="px-4 py-6 sm:px-0">
 							<div id="table"></div>
 							<TestImport/>
-							<DynamicTable />
+							<DynamicTable/>
 						</div>
 						{/* /End replace */}
 					</div>
