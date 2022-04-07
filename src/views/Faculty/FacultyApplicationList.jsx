@@ -32,8 +32,14 @@ function classNames(...classes) {
 // import data
 function TestImport(){
 	var facultyId = localStorage.getItem("userId");
-	var axiosData = getFacultyApplications(facultyId)
-	console.log(axiosData)
+	getFacultyApplications(facultyId).then((response) => {
+		if(response.status === 200){
+			console.log("response", response);
+			console.log("data", response.data);
+		}
+	}).catch(err => {
+		console.log("Error", err.message);
+	})
 	return null
 }
 

@@ -4,7 +4,6 @@ const axios = require('axios');
 
 // Gets Access Token to grant access to pages
 const getAccessToken=()=>{
-    console.log(localStorage.getItem('userAccess'))
     return localStorage.getItem('userAccess');
 }
 
@@ -72,21 +71,17 @@ export const getSingleStudent=(studentId)=>{
 }
 
 // Returns all applications under a faculty member
-export const getFacultyApplications = async (facultyId) => {
-    let res = await axios.get(`https://intern-management-backend.herokuapp.com/api/student/faculty/${facultyId}/students`,{
+export const getFacultyApplications=(facultyId,authRequest)=>{
+    return axios({
+        'method':'GET',
+        'url':`https://intern-management-backend.herokuapp.com/api/student/faculty/${facultyId}/students`,
+        //'url':`http://localhost:7070/api/student/students`,
+        'data':authRequest,
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }
     })
-    .then((res) => {
-        console.log(res)
-        console.log(res.data)
-        return res.data
-    }).catch((error) => {
-        console.error(error)
-    })
 }
-
 
 // Add application data to student
 export const postStudentApplication=(studentId, authRequest)=>{
