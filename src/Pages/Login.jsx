@@ -6,9 +6,9 @@ function clearStorage(){
 	localStorage.clear();
 }
 
-window.onload = clearStorage();
-
 function Login() {
+	window.onload = clearStorage();
+
 	const [values, setValues] = useState({
 		nwId: "",
 		password: "",
@@ -61,7 +61,6 @@ function Login() {
 			window.alert("Invalid Login");
 			isError = true;
 		});
-		console.log(localStorage.getItem("userRole"));
 	};
 
 	const handleChange = (e) => {
@@ -70,25 +69,6 @@ function Login() {
 			[e.target.name]: e.target.value,
 		}));
 	};
-
-	const handleRedirect = (role) => {
-		if(role === "ROLE_FACULTY"){
-			navigate("/Faculty");
-		}
-		else if(role === "ROLE_ADMIN"){
-			navigate("/admin")
-		}
-		else if(role === "ROLE_USER"){
-			navigate("/studentApplications")
-		}
-		else{
-			navigate("/login")
-		}
-	}
-
-	// if (user) {
-	// 	return <div>{navigate("/")}</div>;
-	// }
 
 	return (
 		<div className="flex bg-nwgreen items-center justify-center p-12">

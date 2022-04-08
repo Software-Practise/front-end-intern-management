@@ -5,7 +5,7 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
 import TableData from '.././falculty.json';
 import { getFacultyApplications } from "../../api/apiRequests";
-import axios from "axios";
+import $ from 'jquery'
 
 const user = {
   name: "Tom Cook",
@@ -29,7 +29,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-// import data
+// import all application data
 function TestImport(){
 	var facultyId = localStorage.getItem("userId");
 	getFacultyApplications(facultyId).then((response) => {
@@ -40,49 +40,113 @@ function TestImport(){
 	}).catch(err => {
 		console.log("Error", err.message);
 	})
-	var testArray = JSON.parse(localStorage.getItem("allApplications"));
-	console.log("testArray", testArray[0].nwId)
+	
 	return null;
 }
 
-function DynamicTable(){
-	const column = Object.keys(TableData[0]);
-  
-	//get table heading data
-	const ThData =()=>{
-	  return column.map((data)=>{
-		return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
-	  })
-	}
-  
-	//get table row data
-	const tdData =() =>{
-	  return TableData.map((data)=>{
-		return(
-		  <tr>
-			{
-			  column.map((v)=>{
-				return <td className="border border-slate-700 ...">{data[v]}</td>
-			  })
-			}
-		  </tr>
-		)
-	  })
-	}
-  
-	return (
-	  <table className="border-collapse mt-3 border border-slate-500 ...">
-		<thead>
-		  <tr>{ThData()}</tr>
-		</thead>
-		<tbody>
-		  {tdData()}
-		</tbody>
-	  </table>
-	)
+// redirects to application view
+function ClickApp(x){
+	console.log("Row Clicked")
+	localStorage.removeItem("clickedApp");
+	var applications = JSON.parse(localStorage.getItem("allApplications"));
+	localStorage.setItem("clickedApp", JSON.stringify(applications[x]));
+	window.location.href = "/FacultyApplicationView";
 }
 
+// Create dynamic table
+function DynamicTable(){
+	setTimeout(100);
+	var testArray = JSON.parse(localStorage.getItem("allApplications"));
+	if(testArray != null && testArray.length > 0){				{/* checks if they are assigned any applications */}
+		console.log("testArray", testArray);
+		console.log("testArray Type", typeof testArray);
+		console.log("testArray1", testArray[0]);
+		console.log("testArray1 Type", typeof testArray[0]);
+
+		const column = Object.keys(testArray[0]);
+	
+		//get table heading data
+		const ThData =()=>{
+		return column.map((data)=>{
+			return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
+		})
+		}
+	
+		//get table row data
+		const tdData =() =>{
+		return testArray.map((data)=>{
+			return(
+			<tr className="rowClass">
+				{
+				column.map((v)=>{
+					return <td className="border border-slate-700 ...">{data[v]}</td>
+				})
+				}
+			</tr>
+			)
+		})
+		}
+		return (
+			<table id="testID" className="border-collapse mt-3 border border-slate-500 ...">
+				<thead>
+				<tr>{ThData()}</tr>
+				</thead>
+				<tbody>
+				{tdData()}
+				</tbody>
+			</table>
+			)
+		
+	}
+	else{
+		console.log("TableData:",TableData);
+		console.log("TableData1:", TableData[0]);
+		const column = Object.keys(TableData[0]);
+	
+		//get table heading data
+		const ThData =()=>{
+		return column.map((data)=>{
+			return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
+		})
+		}
+	
+		//get table row data
+		const tdData =() =>{
+		return TableData.map((data)=>{
+			return(
+			<tr className="rowClass hover">
+				{
+				column.map((v)=>{
+					return <td className="border border-slate-700 ...">{data[v]}</td>
+				})
+				}
+			</tr>
+			)
+		})
+		}
+		return (
+		<table id="testID" className="border-collapse mt-3 border border-slate-500 ...">
+			<thead>
+			<tr>{ThData()}</tr>
+			</thead>
+			<tbody>
+			{tdData()}
+			</tbody>
+		</table>
+		)
+	};
+	
+}
+
+// Makes rows in dynamic table clickable
+$(function(){
+	$('#testID').find('tr').on("click", function(){
+		ClickApp($(this).index());
+	}); 
+});
+
 export default function Example() {
+	
   return (
 		<>
 			{/*
