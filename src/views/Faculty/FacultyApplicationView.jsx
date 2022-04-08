@@ -204,7 +204,7 @@ export default function Example() {
 
         <header className="bg-gray-800 shadow">       {/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-nwgreen">Faculty/Admin Application View </h1>
+            <h1 className="text-3xl font-bold text-nwgreen">Faculty Application View </h1>
           </div>
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}
@@ -217,9 +217,9 @@ export default function Example() {
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
 				    <div> <b> Student Information </b> </div>
 
-					<div> Name: </div> 
-					<div> Major: </div>
-					<div> Est Graduation Date:  </div>
+					<div id="nameDiv"> Name: </div> 
+					<div id="majorDiv"> Major: </div>
+					<div id="gradDateDiv"> Est Graduation Date:  </div>
 					<div> Credits Needed to Graduate (optional): </div>
 
 			      </div>
@@ -227,7 +227,7 @@ export default function Example() {
 			        <div> <b> Status of Application </b> </div>
 
 					<div> Status (approved/rejected): </div>
-					<div> Faculty Advisor: </div>
+					<div id="facultyDiv"> Faculty Advisor: </div>
 					<div> Insert status graphic (green/red) </div>
 
 			      </div>
@@ -237,8 +237,8 @@ export default function Example() {
 				    <div> <b> Internship Information </b> </div>
 
 					<div> Company: (name) Location: (location) </div>
-					<div> Intern Position: </div>
-					<div> Start Date: (xx/yy/zzzz) End Date: (xx/yy/zzzz) </div>
+					<div> Paid or Unpaid: </div>
+					<div> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
 					<div> Supervisor Name: </div>
 					<div> Supervisor Contact: </div>
 

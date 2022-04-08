@@ -343,7 +343,7 @@ export default function Example() {
 					{/* Header Below Green Navbar, with "Faculty Dashboard" inside */}
 					<div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 						<h1 className="text-3xl font-bold text-nwgreen">
-							Faculty/Admin Applications Overview{" "}
+							Faculty Applications Overview{" "}
 						</h1>
 					</div>
 				</header>
