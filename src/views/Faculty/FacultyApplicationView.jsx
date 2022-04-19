@@ -26,6 +26,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+Window.onload =  function readLocalStorage(){ 
+
+
+	document.getElementById("nameDiv").innerHTML = "Student ID: " + studentID;
+}
+var studentID = localStorage.getItem("nwID");
+
+
 export default function Example() {
   return (
     <>
@@ -217,16 +225,16 @@ export default function Example() {
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
 				    <div> <b> Student Information </b> </div>
 
-					<div id="nameDiv"> Name: </div> 
-					<div id="majorDiv"> Major: </div>
-					<div id="gradDateDiv"> Est Graduation Date:  </div>
-					<div> Credits Needed to Graduate (optional): </div>
+					<div id="nameDiv"> Name:  </div> 
+					<div id="majorDiv"> Major: (major)</div>
+					<div id="gradDateDiv"> Est Graduation Date: (grad date) </div>
+					<div id="creditsDiv"> Credits Needed to Graduate (optional): </div>
 
 			      </div>
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
 			        <div> <b> Status of Application </b> </div>
 
-					<div> Status (approved/rejected): </div>
+					<div id="statusDiv"> Status (approved/rejected): </div>
 					<div id="facultyDiv"> Faculty Advisor: </div>
 					<div> Insert status graphic (green/red) </div>
 
@@ -237,9 +245,9 @@ export default function Example() {
 				    <div> <b> Internship Information </b> </div>
 
 					<div> Company: (name) Location: (location) </div>
-					<div> Paid or Unpaid: </div>
-					<div> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
-					<div> Supervisor Name: </div>
+					<div id="paidDiv"> Paid or Unpaid: </div>
+					<div id="dateDiv"> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
+					<div id="employerDiv">  ID: </div>
 					<div> Supervisor Contact: </div>
 
 			      </div>
