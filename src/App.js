@@ -18,10 +18,10 @@ import FacultyGetHelp from "./views/Faculty/FacultyGetHelp";
 import FacultyInternsList from "./views/Faculty/FacultyInternsList";
 
 // Student Routes
-import StudentDashboard from "./views/StudentDashboard";
-import StudentApply from "./views/StudentApply";
-import StudentOffers from "./views/StudentOffers";
-import StudentGetHelp from "./views/StudentGetHelp";
+import StudentDashboard from "./views/Student/StudentDashboard";
+import StudentApply from "./views/Student/StudentApply";
+import StudentOffers from "./views/Student/StudentOffers";
+import StudentGetHelp from "./views/Student/StudentGetHelp";
 
 
 
