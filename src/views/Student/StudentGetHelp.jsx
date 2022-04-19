@@ -2,7 +2,7 @@
 import React, { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "../assets/nwlogo.png";
+import logo from "../../assets/nwlogo.png";
 
 const user = {
   name: "Tom Cook",
@@ -60,7 +60,7 @@ export default function Example() {
 														className={classNames(
 															item.current
 																? "bg-white-900 text-white"
-																: "text-white-300 hover:bg-white-700 hover:text-white",
+																: "text-white hover:bg-white-700 hover:text-white",
 															"px-3 py-2 rounded-md text-sm font-medium",
 														)}
 														aria-current={item.current ? "page" : undefined}
