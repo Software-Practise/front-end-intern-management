@@ -144,3 +144,14 @@ export const getSingleFaculty=(facultyId)=>{
         }
     })
 }
+
+// Get employer information
+export const getEmployerInformation=(employerId)=>{
+    return axios({
+        'method':'GET',
+        'url':`https://intern-management-backend.herokuapp.com/api/employer/employers/${employerId}`,
+        headers:{
+            'Authorization':'Bearer '+getAccessToken()
+        }
+    })
+}
