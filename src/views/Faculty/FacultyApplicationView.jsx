@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
+import { getEmployerInformation } from "../../api/apiRequests";
 
 const user = {
   name: "Tom Cook",
@@ -26,13 +27,51 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-Window.onload =  function readLocalStorage(){ 
+// pull clickedApp from local storage and into variables (the app to be shown in view)
+var clickedApp = JSON.parse(localStorage.getItem("clickedApp"));
+console.log("clickedApp Pull", clickedApp);
+var nwId = clickedApp["nwId"];
+var appId = clickedApp["appId"]; // ar[key] to get the value
+var creditHr = clickedApp["creditHour"];
+var empId = clickedApp["empId"];
+var startDate = clickedApp["startDate"];
+var endDate = clickedApp["endDate"];
+var facId = clickedApp["faculty_id"];
+var paid = clickedApp["paid"];
+var status = clickedApp["status"];
 
-
-	document.getElementById("nameDiv").innerHTML = "Student ID: " + studentID;
+function ImportEmployerInfo(){
+	getEmployerInformation(empId).then((response) => {
+		if(response.status === 200){
+			console.log("data", response.data);
+			localStorage.setItem("employerData", JSON.stringify(response.data));
+		}
+	}).catch(err => {
+		console.log("Error", err.message);
+	})
+	
+	return null;
 }
-var studentID = localStorage.getItem("nwID");
 
+//ImportEmployerInfo();
+
+// pull employer info from local storage and into variables
+var empInfoAr = JSON.parse(localStorage.getItem("employerData"));
+console.log("employer info test ar, might fail pull", empInfoAr)
+//object."key name" and possibly .value to retrieve it
+
+// Window.onload = function ReadLocalStorage(){ 
+
+// 	document.getElementById("studentIdDiv").innerHTML = "Student ID: " + nwId;
+
+// 	// if concat doesnt work: `id: ${id}`
+// }
+
+Window.onload = function PushDataToView(){
+	const nwIdDiv = document.getElementById("nwIdDiv");
+	nwIdDiv.textContent = 'Student ID: ' + nwId;
+	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
+}
 
 export default function Example() {
   return (
@@ -216,6 +255,9 @@ export default function Example() {
           </div>
         </header>
         <main>        {/* Everything Below "Faculty Dashboard" */}
+
+		  <ImportEmployerInfo/>
+
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 
             <div className="px-4 py-6 sm:px-0">       {/* Everything Below Button */}
@@ -225,9 +267,9 @@ export default function Example() {
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
 				    <div> <b> Student Information </b> </div>
 
-					<div id="nameDiv"> Name:  </div> 
+					<div id="nwIdDiv"> Name: (should get deleted when page loads)  </div> 
 					<div id="majorDiv"> Major: (major)</div>
-					<div id="gradDateDiv"> Est Graduation Date: (grad date) </div>
+					<div id="gradDateDiv"> Est Graduation Date: </div>
 					<div id="creditsDiv"> Credits Needed to Graduate (optional): </div>
 
 			      </div>
@@ -247,7 +289,7 @@ export default function Example() {
 					<div> Company: (name) Location: (location) </div>
 					<div id="paidDiv"> Paid or Unpaid: </div>
 					<div id="dateDiv"> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
-					<div id="employerDiv">  ID: </div>
+					<div id="employerDiv"> Supervisor Name: </div>
 					<div> Supervisor Contact: </div>
 
 			      </div>
