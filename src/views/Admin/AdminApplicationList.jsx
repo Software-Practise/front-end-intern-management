@@ -9,8 +9,6 @@ import { getAllApplications } from "../../api/apiRequests";
 import { searchBar } from "../../components/searchBar";
 import $ from "jquery";
 
-// Search Bar Functionality
-
 const user = {
 	name: "Tom Cook",
 	email: "tom@example.com",
