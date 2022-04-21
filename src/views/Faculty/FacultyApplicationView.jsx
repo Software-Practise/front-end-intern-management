@@ -27,20 +27,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-// pull clickedApp from local storage and into variables (the app to be shown in view)
-var clickedApp = JSON.parse(localStorage.getItem("clickedApp"));
-console.log("clickedApp Pull", clickedApp);
-var nwId = clickedApp["nwId"];
-var appId = clickedApp["appId"]; // ar[key] to get the value
-var creditHr = clickedApp["creditHour"];
-var empId = clickedApp["empId"];
-var startDate = clickedApp["startDate"];
-var endDate = clickedApp["endDate"];
-var facId = clickedApp["faculty_id"];
-var paid = clickedApp["paid"];
-var status = clickedApp["status"];
-
 function ImportEmployerInfo(){
+	var empId = localStorage.getItem("empId");
 	getEmployerInformation(empId).then((response) => {
 		if(response.status === 200){
 			console.log("data", response.data);
@@ -53,11 +41,6 @@ function ImportEmployerInfo(){
 	return null;
 }
 
-//ImportEmployerInfo();
-
-// pull employer info from local storage and into variables
-var empInfoAr = JSON.parse(localStorage.getItem("employerData"));
-console.log("employer info test ar, might fail pull", empInfoAr)
 //object."key name" and possibly .value to retrieve it
 
 // Window.onload = function ReadLocalStorage(){ 
@@ -68,6 +51,31 @@ console.log("employer info test ar, might fail pull", empInfoAr)
 // }
 
 Window.onload = function PushDataToView(){
+
+	// pull clickedApp from local storage and into variables
+	var clickedApp = JSON.parse(localStorage.getItem("clickedApp"));
+	console.log("clickedApp Pull", clickedApp);
+
+	// pull employer info from local storage and into variables
+	var employer = JSON.parse(localStorage.getItem("employerData"));
+	console.log("employer info test ar, might fail pull", employer)
+
+	if (clickedApp == null){
+		console.log("clickedApp is null")
+		return;
+	}
+
+	var nwId = clickedApp["nwId"];
+	var appId = clickedApp["appId"]; // ar[key] to get the value
+	var creditHr = clickedApp["creditHour"];
+	var empId = clickedApp["empId"];
+	var startDate = clickedApp["startDate"];
+	var endDate = clickedApp["endDate"];
+	var facId = clickedApp["faculty_id"];
+	var paid = clickedApp["paid"];
+	var status = clickedApp["status"];
+
+	// pass var content to the view
 	const nwIdDiv = document.getElementById("nwIdDiv"); 
 	nwIdDiv.textContent = 'Student ID: ' + nwId;
 
@@ -289,10 +297,10 @@ export default function Example() {
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
 				    <div> <b> Student Information </b> </div>
 
-					<div id="nwIdDiv"> Name: (should get deleted when page loads)  </div> 
-					<div id="majorDiv"> Major: (major)</div>
+					<div id="nwIdDiv"> Student ID: (should get replaced when page loads)  </div> 
+					<div id="majorDiv"> Major: </div>
 					<div id="gradDateDiv"> Est Graduation Date: </div>
-					<div id="creditsDiv"> Credits Needed to Graduate (optional): </div>
+					<div id="creditsDiv"> Credits Needed to Graduate: </div>
 
 			      </div>
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
@@ -300,7 +308,7 @@ export default function Example() {
 
 					<div id="appIdDiv"> Application ID:  </div>
 					<div id="statusDiv"> Status (approved/rejected): </div>
-					<div id="facIdDiv"> Faculty ID:: </div>
+					<div id="facIdDiv"> Faculty ID: </div>
 
 
 			      </div>
