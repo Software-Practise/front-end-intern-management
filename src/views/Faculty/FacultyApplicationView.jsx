@@ -75,14 +75,12 @@ window.onload = function PushDataToView(){
 	var status = clickedApp["status"];
 
 
-
-
 	// pass var content to the view
 	const nwIdDiv = document.getElementById("nwIdDiv"); 
 	nwIdDiv.textContent = 'Student ID: ' + nwId;
 
-	//const creditHrDiv = document.getElementById(""); 
-	//creditHrDiv.textContent = 'Credit Hours: ' + creditHr;
+	const creditHrDiv = document.getElementById("creditsDiv"); 
+	creditHrDiv.textContent = 'Internship Credit Hours: ' + creditHr;
 
 	const empIdDiv = document.getElementById("employerIdDiv");
 	empIdDiv.textContent = 'Employer ID: ' + empId;
@@ -104,10 +102,35 @@ window.onload = function PushDataToView(){
 
 	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
 
+	//////////
+
 	// pull employer info from local storage and into variables
 	ImportEmployerInfo();
 	var employer = JSON.parse(localStorage.getItem("employerData"));
 	console.log("employer info test ar, might fail pull", employer)
+
+	var svfn = employer["fName"];
+	var svln = employer["lName"];
+	var street = employer["street"];
+	var city = employer["city"];
+	var state = employer["state"];
+	var zipCode = employer["zipCode"];
+	var contactNumber = employer["phoneNumber"];
+	var email = employer["email"];
+	var companyName = employer["companyName"];
+
+	// pass var content to the view
+	const svNameDiv = document.getElementById("supervisorDiv"); 
+	svNameDiv.textContent = 'Supervisor Name: ' + svfn + ' ' + svln;
+
+	const locationDiv = document.getElementById("locationDiv");
+	locationDiv.textContent = 'Location ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
+
+	const contactDiv = document.getElementById("contactDiv");
+	contactDiv.textContent = 'Contact - Phone Number: ' + contactNumber + ' Email: ' + email;
+
+	const companyNameDiv = document.getElementById("companyDiv");
+	companyNameDiv.textContent = 'Company Name: ' + companyName;
 }
 
 export default function Example() {
@@ -305,9 +328,9 @@ export default function Example() {
 				    <div> <b> Student Information </b> </div>
 
 					<div id="nwIdDiv"> Student ID: (should get replaced when page loads)  </div> 
-					<div id="majorDiv"> Major: </div>
-					<div id="gradDateDiv"> Est Graduation Date: </div>
 					<div id="creditsDiv"> Credits Needed to Graduate: </div>
+					<div id="employerIdDiv"> Employer ID: </div>
+
 
 			      </div>
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
@@ -325,11 +348,12 @@ export default function Example() {
 				  <div className="p-1 border-t border-r border-solid basis"> 				{/* Bottom Left Box */}
 				    <div> <b> Internship Information </b> </div>
 
-					<div id="companyDiv"> Company: (name) Location: (location) </div>
-					<div id="employerIdDiv"> Employer ID: </div>
-					<div id="paidDiv"> Paid or Unpaid: </div>
+					<div id="companyDiv"> Company Name: </div>
+					<div id="locationDiv"> Location: </div>
 					<div id="dateDiv"> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
-					<div id="employerContact"> Supervisor Contact: </div>
+					<div id="contactDiv"> Contact Info: </div>
+					<div id="supervisorDiv"> Supervisor Info:  </div>
+					<div id="paidDiv"> Paid or Unpaid: </div>
 
 			      </div>
 				</div>
