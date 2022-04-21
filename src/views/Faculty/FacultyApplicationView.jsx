@@ -339,7 +339,7 @@ export default function Example() {
 					<div id="appIdDiv"> Application ID:  </div>
 					<div id="facIdDiv"> Faculty ID: </div>
 					<div id="statusDiv"> Status (approved/rejected): </div>
-
+					<div> Note: application status can be approved, pending, or rejected. If pending or rejected, please reach out to your advisor </div>
 
 
 			      </div>
