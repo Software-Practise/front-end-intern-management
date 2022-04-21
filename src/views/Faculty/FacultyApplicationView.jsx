@@ -27,7 +27,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function ImportEmployerInfo(empId){
+function ImportEmployerInfo(){
+
+	var clickedApp = JSON.parse(localStorage.getItem("clickedApp"));
+	var empId = clickedApp["empId"];
+
 	getEmployerInformation(empId).then((response) => {
 		if(response.status === 200){
 			console.log("data", response.data);
@@ -71,12 +75,6 @@ window.onload = function PushDataToView(){
 	var status = clickedApp["status"];
 
 
-	// pull employer info from local storage and into variables
-	ImportEmployerInfo(empId);
-	var employer = JSON.parse(localStorage.getItem("employerData"));
-	console.log("employer info test ar, might fail pull", employer)
-
-
 
 
 	// pass var content to the view
@@ -105,6 +103,11 @@ window.onload = function PushDataToView(){
 	paidDiv.textContent = 'Paid Internship: ' + paid;
 
 	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
+
+	// pull employer info from local storage and into variables
+	ImportEmployerInfo();
+	var employer = JSON.parse(localStorage.getItem("employerData"));
+	console.log("employer info test ar, might fail pull", employer)
 }
 
 export default function Example() {
