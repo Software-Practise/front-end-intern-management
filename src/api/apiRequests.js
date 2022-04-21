@@ -104,6 +104,7 @@ export const getAllApplications=(authRequest)=>{
         'method':'GET',
         'url':`https://intern-management-backend.herokuapp.com/api/student/students/application`,
         //'url':`http://localhost:7070/api/student/students`,
+        'data':authRequest,
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }

@@ -3,8 +3,13 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
-import TableData from '.././falculty.json';
+import TableData from ".././falculty.json";
+import { useSate, useEffect } from "react";
+import { getAllApplications } from "../../api/apiRequests";
+import { searchBar } from "../../components/searchBar";
+import $ from "jquery";
 
+// Search Bar Functionality
 
 const user = {
 	name: "Tom Cook",
@@ -27,44 +32,130 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
-function DynamicTable() {
-	// get table column
-	const column = Object.keys(TableData[0]);
-
-	//get table heading data
-	const ThData = () => {
-		return column.map((data) => {
-			return <th key={data} className="m-4 border border-slate-600 ...">{data}</th>
+// import all application data
+function TestImport() {
+	getAllApplications()
+		.then((response) => {
+			if (response.status === 200) {
+				console.log("data", response.data);
+				localStorage.setItem("allApplications", JSON.stringify(response.data));
+			}
 		})
-	}
+		.catch((err) => {
+			console.log("Error", err.message);
+		});
 
-	//get table row data
-	const tdData = () => {
-		return TableData.map((data) => {
-			return (
-				<tr>
-					{
-						column.map((v) => {
-							return <td className="border border-slate-700 ...">{data[v]}</td>
-						})
-					}
-				</tr>
-			)
-		})
-	}
-
-	return (
-		<table className="border-collapse mt-3 border border-slate-500 ...">
-			<thead>
-				<tr>{ThData()}</tr>
-			</thead>
-			<tbody>
-				{tdData()}
-			</tbody>
-		</table>
-	)
+	return null;
 }
 
+// redirects to application view
+function ClickApp(x) {
+	console.log("Row Clicked");
+	localStorage.removeItem("clickedApp");
+	var applications = JSON.parse(localStorage.getItem("allApplications"));
+	localStorage.setItem("clickedApp", JSON.stringify(applications[x]));
+	window.location.href = "/AdminApplicationList";
+}
+
+// Create dynamic table
+function DynamicTable() {
+	setTimeout(100);
+	var testArray = JSON.parse(localStorage.getItem("allApplications"));
+	if (testArray != null && testArray.length > 0) {
+		{
+			/* checks if they are assigned any applications */
+		}
+		console.log("testArray", testArray);
+		console.log("testArray Type", typeof testArray);
+		console.log("testArray1", testArray[0]);
+		console.log("testArray1 Type", typeof testArray[0]);
+
+		const column = Object.keys(testArray[0]);
+
+		//get table heading data
+		const ThData = () => {
+			return column.map((data) => {
+				return (
+					<th key={data} className="m-4 border border-slate-600 ...">
+						{data}
+					</th>
+				);
+			});
+		};
+
+		//get table row data
+		const tdData = () => {
+			return testArray.map((data) => {
+				return (
+					<tr className="rowClass">
+						{column.map((v) => {
+							return <td className="border border-slate-700 ...">{data[v]}</td>;
+						})}
+					</tr>
+				);
+			});
+		};
+		return (
+			<table
+				id="testID"
+				className="border-collapse mt-3 border border-slate-500 ..."
+			>
+				<thead>
+					<tr>{ThData()}</tr>
+				</thead>
+				<tbody>{tdData()}</tbody>
+			</table>
+		);
+	} else {
+		console.log("TableData:", TableData);
+		console.log("TableData1:", TableData[0]);
+		const column = Object.keys(TableData[0]);
+
+		//get table heading data
+		const ThData = () => {
+			return column.map((data) => {
+				return (
+					<th key={data} className="m-4 border border-slate-600 ...">
+						{data}
+					</th>
+				);
+			});
+		};
+
+		//get table row data
+		const tdData = () => {
+			return TableData.map((data) => {
+				return (
+					<tr className="rowClass hover">
+						{column.map((v) => {
+							return <td className="border border-slate-700 ...">{data[v]}</td>;
+						})}
+					</tr>
+				);
+			});
+		};
+		return (
+			<table
+				id="testID"
+				className="border-collapse mt-3 border border-slate-500 ..."
+			>
+				<thead>
+					<tr>{ThData()}</tr>
+				</thead>
+				<tbody>{tdData()}</tbody>
+			</table>
+		);
+	}
+}
+
+// Makes rows in dynamic table clickable
+$(function () {
+	$("#testID")
+		.find("tr")
+		.on("click", function () {
+			ClickApp($(this).index());
+		});
+});
 export default function Example() {
 	return (
 		<>
@@ -272,14 +363,7 @@ export default function Example() {
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						<div className="flex justify-left">
 							<div className="mb-3 xl:w-96">
-								<div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
-									<input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2"/>
-										<button className="btn inline-block px-6 py-2.5 bg-blue-600 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
-											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-												<path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
-											</svg>
-										</button>
-								</div>
+								<searchBar />
 							</div>
 						</div>
 						<div class="max-w-2xl mx-auto"> </div>
@@ -287,6 +371,7 @@ export default function Example() {
 						{/* start of table */}
 						<div className="px-4 py-6 sm:px-0">
 							<div id="table"></div>
+							<TestImport />
 							<DynamicTable />
 						</div>
 						{/* /End replace */}
