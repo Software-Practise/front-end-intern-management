@@ -27,8 +27,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function ImportEmployerInfo(){
-	var empId = localStorage.getItem("empId");
+function ImportEmployerInfo(empId){
 	getEmployerInformation(empId).then((response) => {
 		if(response.status === 200){
 			console.log("data", response.data);
@@ -50,15 +49,11 @@ function ImportEmployerInfo(){
 // 	// if concat doesnt work: `id: ${id}`
 // }
 
-Window.onload = function PushDataToView(){
+window.onload = function PushDataToView(){
 
 	// pull clickedApp from local storage and into variables
 	var clickedApp = JSON.parse(localStorage.getItem("clickedApp"));
 	console.log("clickedApp Pull", clickedApp);
-
-	// pull employer info from local storage and into variables
-	var employer = JSON.parse(localStorage.getItem("employerData"));
-	console.log("employer info test ar, might fail pull", employer)
 
 	if (clickedApp == null){
 		console.log("clickedApp is null")
@@ -75,6 +70,15 @@ Window.onload = function PushDataToView(){
 	var paid = clickedApp["paid"];
 	var status = clickedApp["status"];
 
+
+	// pull employer info from local storage and into variables
+	ImportEmployerInfo(empId);
+	var employer = JSON.parse(localStorage.getItem("employerData"));
+	console.log("employer info test ar, might fail pull", employer)
+
+
+
+
 	// pass var content to the view
 	const nwIdDiv = document.getElementById("nwIdDiv"); 
 	nwIdDiv.textContent = 'Student ID: ' + nwId;
@@ -82,7 +86,7 @@ Window.onload = function PushDataToView(){
 	//const creditHrDiv = document.getElementById(""); 
 	//creditHrDiv.textContent = 'Credit Hours: ' + creditHr;
 
-	const empIdDiv = document.getElementById("employerDiv");
+	const empIdDiv = document.getElementById("employerIdDiv");
 	empIdDiv.textContent = 'Employer ID: ' + empId;
 
 	const dateDiv = document.getElementById("dateDiv");
@@ -92,13 +96,13 @@ Window.onload = function PushDataToView(){
 	appIdDiv.textContent = 'Application ID: ' + appId;
 
 	const statusDiv = document.getElementById("statusDiv"); 
-	statusDiv.textContent = 'Application Status ' + status;
+	statusDiv.textContent = 'Application Status: ' + status;
 
 	const facIdDiv = document.getElementById("facIdDiv"); 
-	facIdDiv.textContent = 'Faculty ID: ' + facId;
+	facIdDiv.textContent = 'Student Advisor ID: ' + facId;
 
 	const paidDiv = document.getElementById("paidDiv");
-	paidDiv.textContent = 'Paid (T/F): ' + paid;
+	paidDiv.textContent = 'Paid Internship: ' + paid;
 
 	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
 }
@@ -307,8 +311,9 @@ export default function Example() {
 			        <div> <b> Status of Application </b> </div>
 
 					<div id="appIdDiv"> Application ID:  </div>
-					<div id="statusDiv"> Status (approved/rejected): </div>
 					<div id="facIdDiv"> Faculty ID: </div>
+					<div id="statusDiv"> Status (approved/rejected): </div>
+
 
 
 			      </div>
@@ -317,11 +322,11 @@ export default function Example() {
 				  <div className="p-1 border-t border-r border-solid basis"> 				{/* Bottom Left Box */}
 				    <div> <b> Internship Information </b> </div>
 
-					<div> Company: (name) Location: (location) </div>
+					<div id="companyDiv"> Company: (name) Location: (location) </div>
+					<div id="employerIdDiv"> Employer ID: </div>
 					<div id="paidDiv"> Paid or Unpaid: </div>
 					<div id="dateDiv"> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
-					<div id="employerDiv"> Supervisor Name: </div>
-					<div> Supervisor Contact: </div>
+					<div id="employerContact"> Supervisor Contact: </div>
 
 			      </div>
 				</div>
