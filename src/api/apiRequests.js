@@ -148,6 +148,7 @@ export const getSingleFaculty=(facultyId)=>{
 
 // Get employer information
 export const getEmployerInformation=(employerId)=>{
+    console.log("EMPLOYER ID", employerId)
     return axios({
         'method':'GET',
         'url':`https://intern-management-backend.herokuapp.com/api/employer/employers/${employerId}`,
@@ -162,6 +163,7 @@ export const getSingleStudentApplication=(studentId)=>{
     return axios({
         'method':'GET',
         'url':`https://intern-management-backend.herokuapp.com/api/student/students/${studentId}/applications`,
+
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }
