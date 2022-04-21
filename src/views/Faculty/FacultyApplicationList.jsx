@@ -138,16 +138,35 @@ function DynamicTable(){
 	
 }
 
-// Makes rows in dynamic table clickable
+// Dynamic Table Styling
 $(function(){
+	// Makes rows clickable
 	$('#testID').find('tbody').find('tr').on("click", function(){
 		ClickApp($(this).index());
 	}); 
+
+	// Makes rows hoverable
 	$('#testID').find('tbody').find('tr').mouseenter(function(){
 		$(this).css("background", "#D3D3D3");
 	}).mouseleave(function(){
 		$(this).css("background", "transparent");
-	})
+	});
+
+	// Styles Table
+	$('testID').each(function(){
+		$(this).removeClass();
+	});
+
+	// Styles Table Header Rows
+	$('#testID').find('thead').find('tr').each(function(){
+		$(this).removeClass();
+		$(this).addClass("bg-nwgreen px-6 py-2 text-slate")
+	});
+
+	// Styles Table Body Rows
+	$('#testID').find('tbody').find('tr').each(function(){
+		$(this).addClass("text-center")
+	});
 });
 
 export default function Example() {
