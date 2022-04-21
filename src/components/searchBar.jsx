@@ -1,9 +1,8 @@
 import { useSate, useEffect } from "react";
 import { getAllApplications } from "../api/apiRequests";
-import AdminApplicationList from "./views/Admin/AdminApplicationList";
+import AdminApplicationList from "../views/Admin/AdminApplicationList";
 
 const searchBar = () => {
-	const [search, setSearch] = useState([]);
 	return (
 		<div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
 			<input
