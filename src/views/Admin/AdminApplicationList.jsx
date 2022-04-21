@@ -95,7 +95,7 @@ function DynamicTable() {
 		};
 		return (
 			<table
-				id="testID"
+				id="testID1"
 				className="border-collapse mt-3 border border-slate-500 ..."
 			>
 				<thead>
@@ -148,7 +148,7 @@ function DynamicTable() {
 
 // Makes rows in dynamic table clickable
 $(function () {
-	$("#testID")
+	$("#testID1")
 		.find("tr")
 		.on("click", function () {
 			ClickApp($(this).index());
