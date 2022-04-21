@@ -158,11 +158,10 @@ export const getEmployerInformation=(employerId)=>{
 }
 
 // Get Single Students List of ALL Applications
-export const getSingleStudentApplication=(studentId, authRequest)=>{
+export const getSingleStudentApplication=(studentId)=>{
     return axios({
         'method':'GET',
-        'url':`https://intern-management-backend.herokuapp.com/api/student/students/{nwId}/applications${studentId}`,
-        'data':authRequest,
+        'url':`https://intern-management-backend.herokuapp.com/api/student/students/${studentId}/applications`,
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }
