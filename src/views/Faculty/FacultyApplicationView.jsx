@@ -68,8 +68,30 @@ console.log("employer info test ar, might fail pull", empInfoAr)
 // }
 
 Window.onload = function PushDataToView(){
-	const nwIdDiv = document.getElementById("nwIdDiv");
+	const nwIdDiv = document.getElementById("nwIdDiv"); 
 	nwIdDiv.textContent = 'Student ID: ' + nwId;
+
+	//const creditHrDiv = document.getElementById(""); 
+	//creditHrDiv.textContent = 'Credit Hours: ' + creditHr;
+
+	const empIdDiv = document.getElementById("employerDiv");
+	empIdDiv.textContent = 'Employer ID: ' + empId;
+
+	const dateDiv = document.getElementById("dateDiv");
+	dateDiv.textContent = 'Start Date: ' + startDate + ' End Date: ' + endDate;
+	
+	const appIdDiv = document.getElementById("appIdDiv"); 
+	appIdDiv.textContent = 'Application ID: ' + appId;
+
+	const statusDiv = document.getElementById("statusDiv"); 
+	statusDiv.textContent = 'Application Status ' + status;
+
+	const facIdDiv = document.getElementById("facIdDiv"); 
+	facIdDiv.textContent = 'Faculty ID: ' + facId;
+
+	const paidDiv = document.getElementById("paidDiv");
+	paidDiv.textContent = 'Paid (T/F): ' + paid;
+
 	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
 }
 
@@ -276,9 +298,10 @@ export default function Example() {
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
 			        <div> <b> Status of Application </b> </div>
 
+					<div id="appIdDiv"> Application ID:  </div>
 					<div id="statusDiv"> Status (approved/rejected): </div>
-					<div id="facultyDiv"> Faculty Advisor: </div>
-					<div> Insert status graphic (green/red) </div>
+					<div id="facIdDiv"> Faculty ID:: </div>
+
 
 			      </div>
 				</div>
