@@ -140,9 +140,14 @@ function DynamicTable(){
 
 // Makes rows in dynamic table clickable
 $(function(){
-	$('#testID').find('tr').on("click", function(){
+	$('#testID').find('tbody').find('tr').on("click", function(){
 		ClickApp($(this).index());
 	}); 
+	$('#testID').find('tbody').find('tr').mouseenter(function(){
+		$(this).css("background", "#D3D3D3");
+	}).mouseleave(function(){
+		$(this).css("background", "transparent");
+	})
 });
 
 export default function Example() {
