@@ -163,7 +163,18 @@ export const getSingleStudentApplication=(studentId)=>{
     return axios({
         'method':'GET',
         'url':`https://intern-management-backend.herokuapp.com/api/student/students/${studentId}/applications`,
+        headers:{
+            'Authorization':'Bearer '+getAccessToken()
+        }
+    })
+}
 
+// change status of an application
+export const changeApplicationStatus=(nwId, appId, status)=>{
+    return axios({
+        'method':'GET',
+        'url':`https://intern-management-backend.herokuapp.com/api/student/students/${nwId}/setStatus/${appId}`,
+        'data': status,
         headers:{
             'Authorization':'Bearer '+getAccessToken()
         }
