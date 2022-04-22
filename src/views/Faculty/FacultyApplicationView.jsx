@@ -100,14 +100,17 @@ window.onload = function PushDataToView(){
 	const paidDiv = document.getElementById("paidDiv");
 	paidDiv.textContent = 'Paid Internship: ' + paid;
 
-	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
-
 	//////////
 
 	// pull employer info from local storage and into variables
 	ImportEmployerInfo();
 	var employer = JSON.parse(localStorage.getItem("employerData"));
 	console.log("employer info test ar, might fail pull", employer)
+
+	if (employer == null){
+		console.log("employer data is null")
+		return;
+	}
 
 	var svfn = employer["fName"];
 	var svln = employer["lName"];
@@ -124,13 +127,13 @@ window.onload = function PushDataToView(){
 	svNameDiv.textContent = 'Supervisor Name: ' + svfn + ' ' + svln;
 
 	const locationDiv = document.getElementById("locationDiv");
-	locationDiv.textContent = 'Location ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
+	locationDiv.textContent = 'Address: ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
 
 	const contactDiv = document.getElementById("contactDiv");
-	contactDiv.textContent = 'Contact - Phone Number: ' + contactNumber + ' Email: ' + email;
+	contactDiv.textContent = 'Contact - Phone: ' + contactNumber + '- Email: ' + email;
 
 	const companyNameDiv = document.getElementById("companyDiv");
-	companyNameDiv.textContent = 'Company Name: ' + companyName;
+	companyNameDiv.textContent = 'Company: ' + companyName;
 }
 
 export default function Example() {
@@ -334,7 +337,7 @@ export default function Example() {
 
 			      </div>
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
-			        <div> <b> Status of Application </b> </div>
+			        <div> <b> Application Information </b> </div>
 
 					<div id="appIdDiv"> Application ID:  </div>
 					<div id="facIdDiv"> Faculty ID: </div>
@@ -348,7 +351,7 @@ export default function Example() {
 				  <div className="p-1 border-t border-r border-solid basis"> 				{/* Bottom Left Box */}
 				    <div> <b> Internship Information </b> </div>
 
-					<div id="companyDiv"> Company Name: </div>
+					<div id="companyDiv"> </div>
 					<div id="locationDiv"> Location: </div>
 					<div id="dateDiv"> Start Date: (mm/dd/yy)    End Date: (mm/dd/yy) </div>
 					<div id="contactDiv"> Contact Info: </div>
