@@ -22,6 +22,7 @@ import StudentDashboard from "./views/Student/StudentDashboard";
 import StudentApply from "./views/Student/StudentApply";
 import StudentOffers from "./views/Student/StudentOffers";
 import StudentGetHelp from "./views/Student/StudentGetHelp";
+import StudentApplicationView from "./views/Student/StudentApplicationView";
 
 
 
@@ -48,6 +49,7 @@ function App() {
 
         {/* Student Routes */}
         <Route path="/studentApplications" element={<StudentDashboard />} />
+        <Route path="/studentApplicationView" element={<StudentApplicationView />} />
         <Route path="/studentApply" element={<StudentApply />} />
         <Route path="/studentOffers" element={<StudentOffers />} />
         <Route path="/studentGetHelp" element={<StudentGetHelp />} />
