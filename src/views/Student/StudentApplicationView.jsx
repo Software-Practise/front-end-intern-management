@@ -45,14 +45,7 @@ function ImportEmployerInfo(){
 	return null;
 }
 
-//object."key name" and possibly .value to retrieve it
 
-// Window.onload = function ReadLocalStorage(){ 
-
-// 	document.getElementById("studentIdDiv").innerHTML = "Student ID: " + nwId;
-
-// 	// if concat doesnt work: `id: ${id}`
-// }
 
 window.onload = function PushDataToView(){
 
@@ -101,14 +94,17 @@ window.onload = function PushDataToView(){
 	const paidDiv = document.getElementById("paidDiv");
 	paidDiv.textContent = 'Paid Internship: ' + paid;
 
-	//nwIdDiv.innerHTML = `<span>Replacement HTML</span>`;
-
 	//////////
 
 	// pull employer info from local storage and into variables
 	ImportEmployerInfo();
 	var employer = JSON.parse(localStorage.getItem("employerData"));
 	console.log("employer info test ar, might fail pull", employer)
+
+	if (employer == null){
+		console.log("employer data is null")
+		return;
+	}
 
 	var svfn = employer["fName"];
 	var svln = employer["lName"];
@@ -125,15 +121,14 @@ window.onload = function PushDataToView(){
 	svNameDiv.textContent = 'Supervisor Name: ' + svfn + ' ' + svln;
 
 	const locationDiv = document.getElementById("locationDiv");
-	locationDiv.textContent = 'Location ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
+	locationDiv.textContent = 'Address: ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
 
 	const contactDiv = document.getElementById("contactDiv");
-	contactDiv.textContent = 'Contact - Phone Number: ' + contactNumber + ' Email: ' + email;
+	contactDiv.textContent = 'Contact - Phone: ' + contactNumber + '- Email: ' + email;
 
 	const companyNameDiv = document.getElementById("companyDiv");
-	companyNameDiv.textContent = 'Company Name: ' + companyName;
+	companyNameDiv.textContent = 'Company: ' + companyName;
 }
-
 export default function Example() {
   return (
     <>
