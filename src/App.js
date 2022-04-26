@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Generic Routes
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import SearchBar from "./components/SearchBar";
 
 // Admin Routes
 import AdminDashboard from "./views/Admin/AdminDashboard";
