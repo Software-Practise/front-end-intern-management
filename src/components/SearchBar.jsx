@@ -2,6 +2,11 @@ import { useSate, useEffect } from "react";
 import { getAllApplications } from "../api/apiRequests";
 import AdminApplicationList from "../views/Admin/AdminApplicationList";
 
+// Search Bar Logic
+function searchResults() {
+	return console.log("Hello");
+}
+
 const SearchBar = () => {
 	return (
 		<div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
@@ -15,6 +20,7 @@ const SearchBar = () => {
 			<button
 				className="btn inline-block px-6 py-2.5 bg-blue-600 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
 				type="button"
+				onClick={searchResults}
 				id="button-addon2"
 			>
 				<svg
