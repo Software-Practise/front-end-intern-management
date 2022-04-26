@@ -356,19 +356,12 @@ export default function Example() {
 				<main>
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						<div className="max-w-7x1 mx-auto py-6 sm:px-6 lg:px-8">
-							<div className="flex justify-left">
-								<div className="mb-3 xl:w-96">
-									<div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
-										
-									</div>
-								</div>
-							</div>
 						</div>
-						{/* Pseudodata Table */}
+						{/* App List Table */}
 						<div className="px-4 py-6 sm:px-0">
 							<div id="table"></div>
 							<TestImport/>
-							<DynamicTable />
+							<DynamicTable/>
 						</div>
 						{/* /End replace */}
 					</div>
