@@ -4,9 +4,9 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "../../assets/nwlogo.png";
 import TableData from ".././falculty.json";
-import { useSate, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getAllApplications } from "../../api/apiRequests";
-import  SearchBar  from "../../components/SearchBar";
+import SearchBar from "../../components/SearchBar";
 import $ from "jquery";
 
 const user = {
@@ -361,7 +361,7 @@ export default function Example() {
 					<div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
 						<div className="flex justify-left">
 							<div className="mb-3 xl:w-96">
-								<SearchBar />
+								<SearchBar placeholder="Enter Student Name" data={TableData} />
 							</div>
 						</div>
 						<div class="max-w-2xl mx-auto"> </div>
