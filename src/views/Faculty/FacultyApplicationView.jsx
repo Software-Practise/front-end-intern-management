@@ -126,8 +126,8 @@ window.onload = function PushDataToView(){
 	const svNameDiv = document.getElementById("supervisorDiv"); 
 	svNameDiv.textContent = 'Supervisor Name: ' + svfn + ' ' + svln;
 
-	//const locationDiv = document.getElementById("locationDiv");
-	//locationDiv.textContent = 'Address: ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
+	const locationDiv = document.getElementById("locationDiv");
+	locationDiv.textContent = 'Address: ' + street + ', ' + city + ', ' + state + ' ' + zipCode;
 
 	const contactDiv = document.getElementById("contactDiv");
 	contactDiv.textContent = 'Contact - Phone: ' + contactNumber + '- Email: ' + email;
