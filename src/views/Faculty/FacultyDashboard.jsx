@@ -255,8 +255,8 @@ export default function Example() {
               <div className="border-8 border-double border-nwgreen rounded-md h-full">       {/* Everything inside the double border */}
 			    <div className="flex flex-row h-1/2">					{/* Top Row */}
 				  <div className="p-1 border-b border-r border-solid basis-1/2"> 				{/* Top Left Box */}
-				    <div> <b> Number of Your Interns! </b> </div>
-					<div> (Insert Number Here)</div>
+				    <div> <b> Interns you are advising: </b> </div>
+					<div> 1 Intern</div>
 			      </div>
 			      <div className="p-1 border-b border-l border-solid basis-1/2">				{/* Top Right Box */} 
 			        <div> <b> Intern Statuses </b> </div>
