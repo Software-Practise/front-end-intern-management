@@ -32,8 +32,8 @@ function App() {
     <Router>
       <Routes>
         {/* Generic Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
 
         {/* Admin Routes */}
